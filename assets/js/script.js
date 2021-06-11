@@ -65,10 +65,12 @@ function init() {
 
         const preloadImages = () => {
             for (let i = 1; i < frameCount; i++) {
-            const img = new Image();
-            img.src = currentFrame(i);
+                const img = new Image();
+                mg.src = currentFrame(i);
             }
         };
+
+        preloadImages();
 
         const frameCount = 571;
 
