@@ -1,4 +1,4 @@
-import Swup from 'swup';
+// import Swup from 'swup';
 const swup = new Swup();
 
 swup.on('contentReplaced', init);
