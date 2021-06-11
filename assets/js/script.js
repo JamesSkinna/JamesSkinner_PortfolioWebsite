@@ -63,16 +63,16 @@ function init() {
             `/animations/ImgSequence_Protec/animation_protec${index.toString().padStart(4, '0')}.jpg`
         )
 
+        const frameCount = 571;
+
         const preloadImages = () => {
             for (let i = 1; i < frameCount; i++) {
                 const img = new Image();
-                mg.src = currentFrame(i);
+                img.src = currentFrame(i);
             }
         };
 
         preloadImages();
-
-        const frameCount = 571;
 
         canvas.height = 1080;               //Height and width of still images, in pixels - get this from photoshop
         canvas.width = 1920;
