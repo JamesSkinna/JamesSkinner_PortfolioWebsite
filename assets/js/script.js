@@ -1,0 +1,136 @@
+const swup = new Swup();
+
+swup.on('contentReplaced', init);
+
+swup.on('contentReplaced', function () {
+    window.scrollTo(0, 0);
+});
+
+function init() {
+    
+    // Code needed for copy email to clipboard button...
+    if (document.querySelector('#contact-para')) {
+        $(document).ready(function() {
+	
+            // Add class to mailto link
+            // Needed to separate the disabling of the default action AND copy email to clipboard
+            $('a[href^=mailto]').addClass('mailto-link');
+        
+            var mailto = $('.mailto-link');
+            var messageCopy = 'Click to copy email address';
+            var messageSuccess = 'Email address copied to clipboard';
+            
+            mailto.append('<span class="mailto-message"></span>');
+            $('.mailto-message').append(messageCopy);
+            
+            // Disable opening your email client. yuk.
+            $('a[href^=mailto]').click(function() {
+                return false; 
+            })
+            
+            // On click, get href and remove 'mailto:' from value
+            // Store email address in a variable.
+            mailto.click(function() {
+                var href = $(this).attr('href');
+                var email = href.replace('mailto:', '');
+                copyToClipboard(email);
+                $('.mailto-message').empty().append(messageSuccess);
+                setTimeout(function() {
+                    $('.mailto-message').empty().append(messageCopy);}, 2000); 
+            });
+    
+        });
+        
+        // Copies the email variable to clipboard
+        function copyToClipboard(text) {
+            var dummy = document.createElement("input");
+            document.body.appendChild(dummy);
+            dummy.setAttribute('value', text);
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+        }
+    }
+
+    //Code for animating the Protec Video on scroll...
+    //Use this tutorial if confused... https://www.youtube.com/watch?v=4OcAAj8aqS8&t=1190s
+    if (document.querySelector('.protec-scrolling')) {      //Check to see if the Protec page is the current page
+        const html = document.documentElement;
+        const canvas = document.querySelector('.protec-scrolling');
+        const context = canvas.getContext('2d');
+
+        const currentFrame = index => (
+            `/animations/ImgSequence_Protec/animation_protec${index.toString().padStart(4, '0')}.jpg`
+        )
+
+        const preloadImages = () => {
+            for (let i = 1; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            }
+        };
+
+        const frameCount = 571;
+
+        canvas.height = 1080;               //Height and width of still images, in pixels - get this from photoshop
+        canvas.width = 1920;
+        const img = new Image();
+        img.src = currentFrame(1);
+        img.onload = function() {
+            context.drawImage(img, 0, 0)
+        }
+
+        const updateImage = index => {
+            img.src = currentFrame(index)
+            context.drawImage(img, 0, 0);
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = html.scrollTop;       //Gets the pixel in line with the top of the scroll bar (height of the top of scroll bar)
+            const maxScrollTop = html.scrollHeight - window.innerHeight;        //Max height (in pixels) the scroll bar can move - height of the content on the page (visible content height)
+            const pageRatio = html.scrollHeight / window.innerHeight;           //So that as the page becomes longer, the animation still plays only while you can see the video frames on screen
+            // console.log(html.scrollHeight, window.innerHeight, maxScrollTop)
+            const scrollFraction = (scrollTop / maxScrollTop) * pageRatio;      //Fraction of the page scrolled * ratio of video height to max scroll height
+            const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))    //Get the frame required to output, based on the user's scroll position
+            // console.log(frameIndex)
+
+            requestAnimationFrame( () => updateImage(frameIndex + 1))           //Update the frame shown in the canvas
+        })
+    }
+
+    // Below just runs to make sure all slideshow stuff is laid out properly on first load of website
+    if (document.querySelector('.slideshow-container')) {
+        var slideIndex = [1,1,1];
+        var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+        var dotId = ["dot1", "dot2", "dot3"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+        showSlides(1, 2);
+
+        function plusSlides(n, no) {
+            showSlides(slideIndex[no] += n, no);
+        }
+
+        function currentSlide(n, no) {
+            showSlides(slideIndex[no] = n, no);
+        }
+
+        function showSlides(n, no) {
+            var i;
+            var x = document.getElementsByClassName(slideId[no]);
+            var y = document.getElementsByClassName(dotId[no]);
+            if (n > x.length) {slideIndex[no] = 1}    
+            if (n < 1) {slideIndex[no] = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            for (i = 0; i < y.length; i++) {
+                y[i].className = y[i].className.replace(" active", "");
+            }
+            x[slideIndex[no]-1].style.display = "block";
+            y[slideIndex[no]-1].className += " active";  
+        }
+    }
+}
+
+init();
