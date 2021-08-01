@@ -2379,7 +2379,7 @@ input, select, textarea {
 		color: rgb(54, 54, 54);
 	}
 
-	#about-title, #portfolio-title, #instagram-icon, #linked-in-icon {
+	#about-title, #portfolio-title, #cv-title, #instagram-icon, #linked-in-icon {
 		color: rgb(0, 0, 0);
 	}
 
@@ -2393,7 +2393,7 @@ input, select, textarea {
 		background: #f7f7f7;
 	}
 
-	#name:hover, #about-title:hover, #portfolio-title:hover {
+	#name:hover, #about-title:hover, #cv-title:hover, #portfolio-title:hover {
 		color: rgb(0, 0, 0) !important;
 		background: #f7f7f7;
 	}
