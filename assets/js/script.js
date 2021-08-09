@@ -84,16 +84,68 @@ function init() {
 
     //Code for animating the Protec Video on scroll...
     //Use this tutorial if confused... https://www.youtube.com/watch?v=4OcAAj8aqS8&t=1190s
+    // if (document.querySelector('.protec-scrolling')) {      //Check to see if the Protec page is the current page
+    //     const html = document.documentElement;
+    //     const canvas = document.querySelector('.protec-scrolling');
+    //     const context = canvas.getContext('2d');
+
+    //     const currentFrame = index => (
+    //         `/animations/ImgSequence_Protec/animation_protec${index.toString().padStart(4, '0')}.jpg`
+    //     )
+
+    //     const frameCount = 571;
+
+    //     const preloadImages = () => {
+    //         for (let i = 1; i < frameCount; i++) {
+    //             const img = new Image();
+    //             img.src = currentFrame(i);
+    //         }
+    //     };
+
+    //     preloadImages();
+
+    //     canvas.height = 1080;               //Height and width of still images, in pixels - get this from photoshop
+    //     canvas.width = 1920;
+    //     const img = new Image();
+    //     img.src = currentFrame(1);
+    //     img.onload = function() {
+    //         context.drawImage(img, 0, 0)
+    //     }
+
+    //     const updateImage = index => {
+    //         img.src = currentFrame(index)
+    //         context.drawImage(img, 0, 0);
+    //     }
+
+    //     window.addEventListener('scroll', () => {
+    //         const scrollTop = html.scrollTop;       //Gets the pixel in line with the top of the scroll bar (height of the top of scroll bar)
+    //         const maxScrollTop = html.scrollHeight - window.innerHeight;        //Max height (in pixels) the scroll bar can move - height of the content on the page (visible content height)
+    //         const pageRatio = html.scrollHeight / window.innerHeight;           //So that as the page becomes longer, the animation still plays only while you can see the video frames on screen
+    //         // console.log(html.scrollHeight, window.innerHeight, maxScrollTop)
+    //         const scrollFraction = (scrollTop / maxScrollTop) * pageRatio;      //Fraction of the page scrolled * ratio of video height to max scroll height
+    //         const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))    //Get the frame required to output, based on the user's scroll position
+    //         // console.log(frameIndex)
+
+    //         requestAnimationFrame( () => updateImage(frameIndex + 1))           //Update the frame shown in the canvas
+    //     })
+    // }
+
     if (document.querySelector('.protec-scrolling')) {      //Check to see if the Protec page is the current page
+        animateOnScroll('.protec-scrolling', 'ImgSequence_Protec/animation_protec', '.jpg', 571);
+    } else if (document.querySelector('.segway-scrolling')) {
+        animateOnScroll('.segway-scrolling', 'ImgSequence_Segway/animation_segway', '.jpg', 239);
+    }
+
+    function animateOnScroll(animationClassName, filePathName, fileExtension, numFrames) {
         const html = document.documentElement;
-        const canvas = document.querySelector('.protec-scrolling');
+        const canvas = document.querySelector(animationClassName);
         const context = canvas.getContext('2d');
 
         const currentFrame = index => (
-            `/animations/ImgSequence_Protec/animation_protec${index.toString().padStart(4, '0')}.jpg`
+            `/animations/${filePathName}${index.toString().padStart(4, '0')}${fileExtension}`
         )
 
-        const frameCount = 571;
+        const frameCount = numFrames;
 
         const preloadImages = () => {
             for (let i = 1; i < frameCount; i++) {
@@ -113,6 +165,7 @@ function init() {
         }
 
         const updateImage = index => {
+            // context.clearRect(0, 0, 1920, 1080);
             img.src = currentFrame(index)
             context.drawImage(img, 0, 0);
         }
