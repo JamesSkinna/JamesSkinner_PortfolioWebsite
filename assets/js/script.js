@@ -82,6 +82,7 @@ function init() {
         }
     }
 
+    // This was the original code from the tutorial - I have since edited this into a function, below
     //Code for animating the Protec Video on scroll...
     //Use this tutorial if confused... https://www.youtube.com/watch?v=4OcAAj8aqS8&t=1190s
     // if (document.querySelector('.protec-scrolling')) {      //Check to see if the Protec page is the current page
