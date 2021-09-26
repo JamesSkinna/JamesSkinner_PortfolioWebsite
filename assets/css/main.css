@@ -2802,6 +2802,7 @@ input, select, textarea {
 	/* For the scroll-animated videos */
 	#set-height {
 		height: 100vh;
+		margin-bottom: 3em;
 	}
 
 	canvas {

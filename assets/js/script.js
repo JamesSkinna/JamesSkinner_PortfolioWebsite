@@ -209,9 +209,10 @@ function init() {
 
     // Below just runs to make sure all slideshow stuff is laid out properly on first load of webpage that contains a slideshow
     if (document.querySelector('.slideshow-container')) {
-        showSlides(1, 0);
-        showSlides(1, 1);
-        showSlides(1, 2);
+        // Display the slideshows, always with first images shown on page load
+        currentSlide(1, 0);
+        currentSlide(1, 1);
+        currentSlide(1, 2);
     }
 }
 
