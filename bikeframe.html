@@ -60,7 +60,7 @@
 								<p id="brief-sub-title">Assignment</p>
 							</div>
 							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
-								<p id="brief-para">This was undertaken as a group university project in 2020 for our 'Human Centred Design Engineering' module. We were given an open brief to design something for physical well-being, with the final outcome manifested through 'works-like' and 'looks-like' prototypes. </p>
+								<p id="brief-para">This was undertaken as coursework for part of my 'Finite Element Analysis' module. We were tasked with creating a lightweight tandem bicycle frame using finite element (FE) methods to inform our designs, ensuring that; the frame's natural frequencies were larger than 30 Hz to avoid discomfort due to whole-body vibrations, and its effective life was at least 10 years (equivalent to 1 million loading cycles).</p>
 							</div>
 						</div>
 						<div class="row">
@@ -68,7 +68,7 @@
 								<p id="brief-sub-title">Outcome</p>
 							</div>
 							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
-								<p id="brief-para">1 in 5 young adults (18-25) suffer from some variation of permanent tinnitus, a ringing in the ear caused by exposure to loud noise. This can cause harmful consequential effects, including depression, and construction workers are particularly at risk; with studies showing that over 50% of workers have experienced significant abnormal noise-induced hearing loss.</p>
+								<p id="brief-para">Having designed the original bike frame, I used FE methods to check whether my frame met the natural frequency and fatigue life criteria, trialling two separate materials (Aluminium & Titanium). I then used the FE theory to determine how the frame's fundamental frequency could be increased, and thus improved my original design, increasing the fundamental frequency from 37.8 Hz to 48.6 Hz after one iteration. <br>This demonstrated my ability to; develop accurate FE models, perform mesh refinement studies, perform sanity checks, determine fatigue life of structures, and determine and improve natural frequencies of structues. </p>
 							</div>
 						</div>
 					</div>
@@ -82,10 +82,9 @@
 						<div class="row" id="detail-row">
 							<div id="detail-text-area-left" class="col-8 col-7-large col-12-medium">
 								<p id="detail-sub-title">Methods</p>
-								<p id="detail-para-left">The primary focus of this module was to follow a user-driven design process. We thus started by carrying out user interviews to uncover key insights. </p>
-								<p id="detail-para-left">A crucial finding was that the problem isn't a fault of the PPE itself, but rather a lack of knowledge, and ignorance of workers to the risks of hearing damage.</p>
-								<p id="detail-para-left">This guided my early designs, where I envisaged a product that would simply alert and prompt workers to put on their protection at the required times.</p>
-								<p id="detail-para-left">At every phase of development, we conducted further user research; to understand which aspects of our designs were beneficial to the user, and what could be improved. </p>
+								<p id="detail-para-left">I began by modelling the original bike frame, using a master sketch to ensure that I had met the dimensioning requirements.</p>
+								<p id="detail-para-left">I applied the appropriate boundary conditions to constrain the frame; a fixed geometry to the inner surface of the fork shell where the fork would be attached, and fixed hinges to both rear-wheel bearings where they could rotate about their axes.</p>
+								<p id="detail-para-left">I then applied the appropriate loads; 150 kg masses acting on the surfaces where seats would be attached, to represent the riders' weights, and cyclical (0 to max) 750 N loads to the inner surfaces of the crank shells, representing pedalling forces.</p>
 							</div>
 							<div class="col-4 col-5-large col-12-medium" id="detail-images-area-right">
 								<div class="slideshow-container">
@@ -155,18 +154,18 @@
 							</div>
 							<div id="detail-text-area-right" class="col-8 col-7-large col-12-medium">
 								<p id="detail-sub-title">Results</p>
-								<p id="detail-para-right">Having settled on the 'SHIELD' concept, arising from the combination of the best aspects of each of our designs, it was then my responsibility to produce a works-like prototype, to validate the technical feasibility.</p>
-								<p id="detail-para-right">To do this, I used an Arduino to create a bluetooth-based system that would detect the noise-levels present in the room, and wirelessly transmit them to a separate device. This device would run a Python script, which plotted the data and output this in real-time. </p>
-								<p id="detail-para-right">This data logging would be used to produce the sound map; alerting the site manager to risky areas. Furthermore, the LEDs act as the warning to workers, where a red LED indicates that ear defenders are currently required. </p>
+								<p id="detail-para-right">Before running the simulations, a proper mesh convergence study was carried out, achieving a good quality mesh that computed in a reasonable time. This would help to increase solution accuracy.</p>
+								<p id="detail-para-right">The global element size was gradually reduced until results had converged. Furthermore, areas with higher aspect ratios or localised stress concentrations were also analysed, and mesh control was then applied accordingly.</p>
+								<p id="detail-para-right">Results indicated that the original Aluminium frame had a fundamental frequency of 37.8 Hz, and could withstand almost 3 million load cycles, both of which were above the minimum requirements. </p>
 							</div>
 						</div>
 						<!-- Phase 3 -->
 						<div class="row" id="detail-row">
 							<div id="detail-text-area-left" class="col-8 col-7-large col-12-medium">
 								<p id="detail-sub-title">Improved Design</p>
-								<p id="detail-para-left">Communicating the concept, and explaining why it has value, is just as important as developing the concept in the first place.</p>
-								<p id="detail-para-left">I took on the role of planning, writing the script, and editing the short video that outlines the project problem and solution, which can be seen above.</p>
-								<p id="detail-para-left">Further to this, I helped to lead the presentation to a panel of tutors and external guests. This was was carried out online, owing to the Covid 19 pandemic, but was nonetheless well-received - with our project achieving outstanding recognition in the form of a <a href="https://www.imperial.ac.uk/design-engineering/study/meng/student-prizes/desire-awards/" target="_blank">DESIRE Award</a>.</p>
+								<p id="detail-para-left">Rationale for improvement was derived from the closed-form analytical expression of the fundamental frequency of a cantilever beam (see full report, linked below, for the equations).</p>
+								<p id="detail-para-left">This indicated that if the outer radius of a beam is fixed, by increasing the inner radius (and making the beam profile thinner), the fundamental frequency is increased. Therefore, for my improved design, I increased the beam profiles' external diameters from 30 mm to 40 mm, while reducing the thickness from 2 mm to 1 mm. </p>
+								<p id="detail-para-left">Results now highlighted that I had successfully increased the fundamental frequency, from 37.8 Hz to 48.6 Hz. Furthermore, the fatigue life had also improved, where the frame could now withstand unlimited pedal cycles.</p>
 							</div>
 							<div class="col-4 col-5-large col-12-medium" id="detail-images-area-right">
 								<div class="slideshow-container">
@@ -203,7 +202,7 @@
 								<p id="brief-sub-title">Soft Skills</p>
 							</div>
 							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
-								<p id="skill-para">User-focused Research & Design | Story-telling | Presenting | Communication & Teamwork</p>
+								<p id="skill-para">Iterative Design | Problem Solving</p>
 							</div>
 						</div>
 						<div class="row">
@@ -211,7 +210,7 @@
 								<p id="brief-sub-title">Hard Skills</p>
 							</div>
 							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
-								<p id="skill-para">Electronics | Coding (C++ & Python) | Video Editing (Premiere Pro) | Graphical Design (Illustrator & InDesign)</p>
+								<p id="skill-para">Computer Aided Design (Solidworks) | Finite Element Analysis (Solidworks Simulation) | Scientific Report Writing</p>
 							</div>
 						</div>					
 					</div>
