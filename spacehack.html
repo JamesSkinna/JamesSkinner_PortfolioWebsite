@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+	James Skinner Personal Portfolio Website
+-->
+<html>
+	<head>
+		<title>James Skinner | Space Hack</title>
+		<meta charset="UTF-16">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+					<li class="nav-items">	
+						<ul >
+							<li><a id="portfolio-title" href="/">Portfolio</a></li>
+							<li><a id="about-title" href="/about.html">About</a></li>
+							<li><a id="cv-title" href="https://drive.google.com/file/d/1K64OiiqC1p1I3jo7rJG493wtHMK5fFiA/view?usp=sharing" target="_blank">CV</a></li>
+						</ul>
+					</li>
+					<li class="logo-wrap">
+						<ul>
+								<li><a id="name" href="#top">James Skinner</a></li>
+						</ul>
+					</li>
+					<li class="nav-social">
+						<ul>
+								<li>
+									<a id="linked-in-icon" href="https://www.linkedin.com/in/james-skinner-26004a1a4/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
+								</li>
+								<li>
+									<a id="instagram-icon" href="https://www.instagram.com/js_engineering_design/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+								</li>
+						</ul>
+					</li>
+			</nav>
+
+			<main id="swup" class="transition-fade-project">
+
+				<!-- Reference to top of page, for button to work to scroll to top -->
+				<article id="top"></article>
+
+				<!-- Animation -->
+				<div id="set-height">
+					<canvas class="spacehack-scrolling"></canvas>
+				</div>
+
+				
+				<!-- Project Brief Info -->
+				<article id="brief" class="wrapper style8">
+					<div class="container">
+						<p id="project-title">Space Hackathon</p>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Info</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="brief-para">This was undertaken as a team project over a 2 day period for a hackathon hosted by the Imperial College Space Society, in partnership with Spacebit - a UK space robotics company. We were set the task of designing, presenting, and demonstrating a system that could safely lower Spacebit's Asagumo rover down from a height of 0.8 m onto the lunar surface.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Problem</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="brief-para">The challenge included strict dimensional and mass specifications. Furthermore, the robot had to be deployed the correct way up, using no pyrotechnics for the deployment. Additionally, deployment had to be smooth so to not churn up dust from the surface of the moon, and conditions such as the extreme temperatures of space had to be accounted for.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Solution</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="brief-para">Our team's proposed solution involved lowering the robot on a lightweight cage, that would detach from the external shell (where the robot is stored in transit) and be gradually lowered to the surface via a motor-assisted winch. Furthermore, the base of the cage would be made from a honeycomb mesh, acting as a crumple zone to soften the landing. </p>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- Section for project video -->
+				<article class="wrapper style8">
+						<div class="container">
+							<p id="video-info">Short video explaining our team's project development and outcome</p>
+							<video id="project-video" preload="auto" controls>
+								<source src="/videos/video_SpaceHack.mp4" type="video/mp4">
+							</video>
+						</div>
+				</article>
+				
+				<!-- Project Detail - My contribution -->
+				<article id="detail" class="wrapper style8">
+					<div class="container">
+						<p id="detail-title">_________ Hackathon Summary _________</p>
+						<!-- Phase 1 -->
+						<div class="row" id="detail-row">
+							<div id="detail-text-area-left" class="col-8 col-7-large col-12-medium">
+								<p id="detail-sub-title">Project Overview & Outcome</p>
+								<p id="detail-para-left">The above video summarises our team's process and final outcome. This was all done within the short 48 hour time period.  </p>
+								<p id="detail-para-left">My main role for this hackathon was creating the CAD model for our deployment cage, as well as animating how it would work.</p>
+								<p id="detail-para-left">At this point, I had never done animation before, and so the animation that can be seen at the end of the video was a result of what I had quickly taught myself during the second day of the hackathon.</p>
+								<p id="detail-para-left">I have since improved my animation ability, now confident in using Blender for product animations, and recreated the original video to further practice these skills. </p>
+							</div>
+							<div class="col-4 col-5-large col-12-medium" id="detail-images-area-right">
+								<div class="slideshow-container">
+									<div class="mySlides1 fade">
+										<!-- All images must have dimensions: Width: x, Height: x/1.414 -->
+										<img src="images/SpaceHack_Video1.png" style="width:100%">
+										<div class="text">A still image from the animation that I created during the Hackathon</div>
+									</div>
+
+									<div class="mySlides1 fade">
+										<img src="images/SpaceHack_Video2.png" style="width:100%">
+										<div class="text">A still image from the animation that I created in Blender</div>
+									</div>
+
+									<!-- Next and previous buttons -->
+									<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+									<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+								</div>
+								<!-- The dots/circles -->
+								<div style="text-align:center; margin-bottom: 2em;">
+									<span class="dot1" onclick="currentSlide(1, 0)"></span>
+									<span class="dot1" onclick="currentSlide(2, 0)"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- Skills gained -->
+				<article id="detail" class="wrapper style8">
+					<div class="container">
+						<p id="skills-title">_________ Skills Developed _________</p>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Soft Skills</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="skill-para">Problem Solving | Leadership | Communication & Teamwork</p>
+							</div>
+						</div>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Hard Skills</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="skill-para">CAD Modelling (Solidworks) | Product Animation (Blender)</p>
+							</div>
+						</div>					
+					</div>
+				</article>
+
+				<!-- Footer -->
+				<article id="footer" class="wrapper style3">
+					<footer>
+						<ul id="copyright">
+							<li>&copy; James Skinner 2021. All rights reserved.</li>
+					</footer>
+				</article>
+
+			</main>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+			<script src="assets/js/script.js"></script>
+	</body>
+</html>

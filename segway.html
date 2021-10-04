@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	James Skinner Personal Portfolio Website
+-->
+<html>
+	<head>
+		<title>James Skinner | Mini Segway</title>
+		<meta charset="UTF-16">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+					<li class="nav-items">	
+						<ul >
+							<li><a id="portfolio-title" href="/">Portfolio</a></li>
+							<li><a id="about-title" href="/about.html">About</a></li>
+							<li><a id="cv-title" href="https://drive.google.com/file/d/1K64OiiqC1p1I3jo7rJG493wtHMK5fFiA/view?usp=sharing" target="_blank">CV</a></li>
+						</ul>
+					</li>
+					<li class="logo-wrap">
+						<ul>
+								<li><a id="name" href="#top">James Skinner</a></li>
+						</ul>
+					</li>
+					<li class="nav-social">
+						<ul>
+								<li>
+									<a id="linked-in-icon" href="https://www.linkedin.com/in/james-skinner-26004a1a4/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
+								</li>
+								<li>
+									<a id="instagram-icon" href="https://www.instagram.com/js_engineering_design/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+								</li>
+						</ul>
+					</li>
+			</nav>
+
+			<main id="swup" class="transition-fade-project">
+
+				<!-- Reference to top of page, for button to work to scroll to top -->
+				<article id="top"></article>
+
+				<!-- Animation -->
+				<div id="set-height">
+					<canvas class="segway-scrolling"></canvas>
+				</div>
+
+				
+				<!-- Project Brief Info -->
+				<article id="brief" class="wrapper style8">
+					<div class="container">
+						<p id="project-title">Self-Balancing Segway</p>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Assignment</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="brief-para">This was undertaken as a solo challenge for my second electronics module. We were given the parts to assemble the segway, and then set the challenge to write the code to control it, such that it self-balanced and danced in time to music.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Outcome</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="brief-para">The videos below show my finished attempts at the challenges. The self-balancing highlights my understanding of proportional-integral-derivative (PID) control - using the pitch angle as the set-point variable to control the motors such that the pitch angle is maintained at zero (segway is upright). <br>The dancing then adds another challenge in the form of beat detection. This algorithm is implemented using a sample buffer that relies on a timer interrupt to periodically sample the music. Another buffer then stores the instantaneous energies of the past 50 epochs (20 ms time periods), and if the ratio of the current instantaneous energy to the sum of the past 50 epochs is above a certain threshold, this counts as a beat detected and the next dance move is queued.  </p>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- Section for project videos -->
+				<article class="wrapper style8">
+						<div class="container">
+							<p id="video-info">Short video showing the stability of my self-balancing segway</p>
+							<video id="project-video" preload="auto" controls>
+								<source src="/videos/video_Segway1.mp4" type="video/mp4">
+							</video>
+						</div>
+				</article>
+
+				<article class="wrapper style8">
+					<div class="container">
+						<p id="video-info">Short video of the segway dancing to the beat of the music</p>
+						<video id="project-video" preload="auto" controls>
+							<source src="/videos/video_Segway1b.mp4" type="video/mp4">
+						</video>
+					</div>
+				</article>
+
+				<!-- Skills gained -->
+				<article id="detail" class="wrapper style8">
+					<div class="container">
+						<p id="skills-title">_________ Skills Developed _________</p>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Soft Skills</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="skill-para">Problem Solving</p>
+							</div>
+						</div>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Hard Skills</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="skill-para">Electronics (Signal Interpretation & Feedback Systems) | Coding (MicroPython)</p>
+							</div>
+						</div>					
+					</div>
+				</article>
+
+				<!-- Footer -->
+				<article id="footer" class="wrapper style3">
+					<footer>
+						<ul id="copyright">
+							<li>&copy; James Skinner 2021. All rights reserved.</li>
+					</footer>
+				</article>
+
+			</main>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+			<script src="assets/js/script.js"></script>
+	</body>
+</html>

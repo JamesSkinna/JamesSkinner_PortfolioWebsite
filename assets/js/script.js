@@ -82,21 +82,95 @@ function init() {
         }
     }
 
+    // This was the original code from the tutorial - I have since edited this into a function, below
     //Code for animating the Protec Video on scroll...
     //Use this tutorial if confused... https://www.youtube.com/watch?v=4OcAAj8aqS8&t=1190s
+    // if (document.querySelector('.protec-scrolling')) {      //Check to see if the Protec page is the current page
+    //     const html = document.documentElement;
+    //     const canvas = document.querySelector('.protec-scrolling');
+    //     const context = canvas.getContext('2d');
+
+    //     const currentFrame = index => (
+    //         `/animations/ImgSequence_Protec/animation_protec${index.toString().padStart(4, '0')}.jpg`
+    //     )
+
+    //     const frameCount = 571;
+
+    //     const preloadImages = () => {
+    //         for (let i = 1; i < frameCount; i++) {
+    //             const img = new Image();
+    //             img.src = currentFrame(i);
+    //         }
+    //     };
+
+    //     preloadImages();
+
+    //     canvas.height = 1080;               //Height and width of still images, in pixels - get this from photoshop
+    //     canvas.width = 1920;
+    //     const img = new Image();
+    //     img.src = currentFrame(1);
+    //     img.onload = function() {
+    //         context.drawImage(img, 0, 0)
+    //     }
+
+    //     const updateImage = index => {
+    //         img.src = currentFrame(index)
+    //         context.drawImage(img, 0, 0);
+    //     }
+
+    //     window.addEventListener('scroll', () => {
+    //         const scrollTop = html.scrollTop;       //Gets the pixel in line with the top of the scroll bar (height of the top of scroll bar)
+    //         const maxScrollTop = html.scrollHeight - window.innerHeight;        //Max height (in pixels) the scroll bar can move - height of the content on the page (visible content height)
+    //         const pageRatio = html.scrollHeight / window.innerHeight;           //So that as the page becomes longer, the animation still plays only while you can see the video frames on screen
+    //         // console.log(html.scrollHeight, window.innerHeight, maxScrollTop)
+    //         const scrollFraction = (scrollTop / maxScrollTop) * pageRatio;      //Fraction of the page scrolled * ratio of video height to max scroll height
+    //         const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))    //Get the frame required to output, based on the user's scroll position
+    //         // console.log(frameIndex)
+
+    //         requestAnimationFrame( () => updateImage(frameIndex + 1))           //Update the frame shown in the canvas
+    //     })
+    // }
+
     if (document.querySelector('.protec-scrolling')) {      //Check to see if the Protec page is the current page
+        animateOnScroll('.protec-scrolling', 'ImgSequence_Protec/animation_protec', '.jpg', 0, 571);
+    } else if (document.querySelector('.fitbitbalance-scrolling')) {
+        animateOnScroll('.fitbitbalance-scrolling', 'ImgSequence_FitbitBalance/', '.png', 1, 165);
+    } else if (document.querySelector('.robobug-scrolling')) {
+        animateOnScroll('.robobug-scrolling', 'ImgSequence_RoboBug/', '.png', 0, 360);
+    } else if (document.querySelector('.pregtest-scrolling')) {
+        animateOnScroll('.pregtest-scrolling', 'ImgSequence_PregTest/', '.png', 60, 460);
+    } else if (document.querySelector('.steadygrip-scrolling')) {
+        animateOnScroll('.steadygrip-scrolling', 'ImgSequence_SteadyGrip/', '.png', 0, 170);
+    } else if (document.querySelector('.bikeframe-scrolling')) {
+        animateOnScroll('.bikeframe-scrolling', 'ImgSequence_BikeFrame/', '.png', 1, 180);
+    } else if (document.querySelector('.leonhackathon-scrolling')) {
+        animateOnScroll('.leonhackathon-scrolling', 'ImgSequence_LeonHackathon/', '.png', 0, 220);
+    } else if (document.querySelector('.segway-scrolling')) {
+        animateOnScroll('.segway-scrolling', 'ImgSequence_Segway/animation_segway', '.jpg', 0, 239);
+    } else if (document.querySelector('.spacehack-scrolling')) {
+        animateOnScroll('.spacehack-scrolling', 'ImgSequence_SpaceHack/', '.png', 0, 360);
+    }
+
+    function animateOnScroll(animationClassName, filePathName, fileExtension, frameFirst, frameLast) {
         const html = document.documentElement;
-        const canvas = document.querySelector('.protec-scrolling');
+        const canvas = document.querySelector(animationClassName);
         const context = canvas.getContext('2d');
 
         const currentFrame = index => (
-            `/animations/ImgSequence_Protec/animation_protec${index.toString().padStart(4, '0')}.jpg`
+            `/animations/${filePathName}${index.toString().padStart(4, '0')}${fileExtension}`
         )
+        
+        const frameCount = frameLast - frameFirst;
 
-        const frameCount = 571;
+        // const preloadImages = () => {
+        //     for (let i = 1; i < frameCount; i++) {
+        //         const img = new Image();
+        //         img.src = currentFrame(i);
+        //     }
+        // };
 
         const preloadImages = () => {
-            for (let i = 1; i < frameCount; i++) {
+            for (let i = frameFirst; i < frameLast; i++) {
                 const img = new Image();
                 img.src = currentFrame(i);
             }
@@ -107,12 +181,14 @@ function init() {
         canvas.height = 1080;               //Height and width of still images, in pixels - get this from photoshop
         canvas.width = 1920;
         const img = new Image();
-        img.src = currentFrame(1);
+        // img.src = currentFrame(1);
+        img.src = currentFrame(frameFirst);
         img.onload = function() {
             context.drawImage(img, 0, 0)
         }
 
         const updateImage = index => {
+            // context.clearRect(0, 0, 1920, 1080);
             img.src = currentFrame(index)
             context.drawImage(img, 0, 0);
         }
@@ -123,7 +199,8 @@ function init() {
             const pageRatio = html.scrollHeight / window.innerHeight;           //So that as the page becomes longer, the animation still plays only while you can see the video frames on screen
             // console.log(html.scrollHeight, window.innerHeight, maxScrollTop)
             const scrollFraction = (scrollTop / maxScrollTop) * pageRatio;      //Fraction of the page scrolled * ratio of video height to max scroll height
-            const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))    //Get the frame required to output, based on the user's scroll position
+            // const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))    //Get the frame required to output, based on the user's scroll position
+            const frameIndex = Math.min(frameLast - 1, Math.floor(frameFirst + (scrollFraction * frameCount)))
             // console.log(frameIndex)
 
             requestAnimationFrame( () => updateImage(frameIndex + 1))           //Update the frame shown in the canvas
@@ -132,9 +209,10 @@ function init() {
 
     // Below just runs to make sure all slideshow stuff is laid out properly on first load of webpage that contains a slideshow
     if (document.querySelector('.slideshow-container')) {
-        showSlides(1, 0);
-        showSlides(1, 1);
-        showSlides(1, 2);
+        // Display the slideshows, always with first images shown on page load
+        currentSlide(1, 0);
+        currentSlide(1, 1);
+        currentSlide(1, 2);
     }
 }
 

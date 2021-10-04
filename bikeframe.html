@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<!--
+	James Skinner Personal Portfolio Website
+-->
+<html>
+	<head>
+		<title>James Skinner | Bike Frame FEA</title>
+		<meta charset="UTF-16">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+					<li class="nav-items">	
+						<ul >
+							<li><a id="portfolio-title" href="/">Portfolio</a></li>
+							<li><a id="about-title" href="/about.html">About</a></li>
+							<li><a id="cv-title" href="https://drive.google.com/file/d/1K64OiiqC1p1I3jo7rJG493wtHMK5fFiA/view?usp=sharing" target="_blank">CV</a></li>
+						</ul>
+					</li>
+					<li class="logo-wrap">
+						<ul>
+								<li><a id="name" href="#top">James Skinner</a></li>
+						</ul>
+					</li>
+					<li class="nav-social">
+						<ul>
+								<li>
+									<a id="linked-in-icon" href="https://www.linkedin.com/in/james-skinner-26004a1a4/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
+								</li>
+								<li>
+									<a id="instagram-icon" href="https://www.instagram.com/js_engineering_design/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+								</li>
+						</ul>
+					</li>
+			</nav>
+
+			<main id="swup" class="transition-fade-project">
+
+				<!-- Reference to top of page, for button to work to scroll to top -->
+				<article id="top"></article>
+
+				<!-- Animation -->
+				<div id="set-height">
+					<canvas class="bikeframe-scrolling"></canvas>
+				</div>
+
+				
+				<!-- Project Brief Info -->
+				<article id="brief" class="wrapper style8">
+					<div class="container">
+						<p id="project-title">Bike Frame FEA</p>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Assignment</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="brief-para">This was undertaken as coursework for part of my 'Finite Element Analysis' module. We were tasked with creating a lightweight tandem bicycle frame using finite element (FE) methods to inform our designs, ensuring that; the frame's natural frequencies were larger than 30 Hz to avoid discomfort due to whole-body vibrations, and its effective life was at least 10 years (equivalent to 1 million loading cycles).</p>
+							</div>
+						</div>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Outcome</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="brief-para">Having designed the original bike frame, I used FE methods to check whether my frame met the natural frequency and fatigue life criteria, trialling two separate materials (Aluminium & Titanium). I then used the FE theory to determine how the frame's fundamental frequency could be increased, and thus improved my original design, increasing the fundamental frequency from 37.8 Hz to 48.6 Hz after one iteration. <br>This demonstrated my ability to; develop accurate FE models, perform mesh refinement studies, perform sanity checks, determine fatigue life of structures, and determine and improve natural frequencies of structues. </p>
+							</div>
+						</div>
+					</div>
+				</article>
+				
+				<!-- Project Detail - My contribution -->
+				<article id="detail" class="wrapper style8">
+					<div class="container">
+						<p id="detail-title">_________ Project Overview _________</p>
+						<!-- Phase 1 -->
+						<div class="row" id="detail-row">
+							<div id="detail-text-area-left" class="col-8 col-7-large col-12-medium">
+								<p id="detail-sub-title">Methods</p>
+								<p id="detail-para-left">I began by modelling the original bike frame, using a master sketch to ensure that I had met the dimensioning requirements.</p>
+								<p id="detail-para-left">I applied the appropriate boundary conditions to constrain the frame; a fixed geometry to the inner surface of the fork shell where the fork would be attached, and fixed hinges to both rear-wheel bearings where they could rotate about their axes.</p>
+								<p id="detail-para-left">I then applied the appropriate loads; 150 kg masses acting on the surfaces where seats would be attached, to represent the riders' weights, and cyclical (0 to max) 750 N loads to the inner surfaces of the crank shells, representing pedalling forces.</p>
+							</div>
+							<div class="col-4 col-5-large col-12-medium" id="detail-images-area-right">
+								<div class="slideshow-container">
+									<div class="mySlides1 fade">
+										<!-- All images must have dimensions: Width: x, Height: x/1.414 -->
+										<img src="images/BikeFrame_Methods1.png" style="width:100%">
+										<div class="text">Master sketch (top) and cross-sectional view (bottom)</div>
+									</div>
+
+									<div class="mySlides1 fade">
+										<img src="images/BikeFrame_Boundary1.png" style="width:100%">
+										<div class="text">Boundary conditions - fixed geometry on fork shell & fixed hinges on rear-wheel bearings </div>
+									</div>
+
+									<div class="mySlides1 fade">
+										<img src="images/BikeFrame_Loads.png" style="width:100%">
+										<div class="text">Load conditions - cyclical loads applied to crank shells & constant loads on seat fixtures</div>
+									</div>
+
+									<!-- Next and previous buttons -->
+									<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+									<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+								</div>
+								<!-- The dots/circles -->
+								<div style="text-align:center; margin-bottom: 2em;">
+									<span class="dot1" onclick="currentSlide(1, 0)"></span>
+									<span class="dot1" onclick="currentSlide(2, 0)"></span>
+									<span class="dot1" onclick="currentSlide(3, 0)"></span>
+								</div>
+							</div>
+						</div>
+						<!-- Phase 2 -->
+						<div class="row" id="detail-row">
+							<div class="col-4 col-5-large col-12-medium" id="detail-images-area-left">
+								<div class="slideshow-container">
+									<div class="mySlides2 fade">
+										<img src="images/BikeFrame_Results1.png" style="width:100%">
+										<div class="text">Analysis of the mesh's increased aspect ratio in rear-wheel members</div>
+									</div>
+
+									<div class="mySlides2 fade">
+										<img src="images/BikeFrame_Results2.png" style="width:100%">
+										<div class="text">Analysis of localised stress concentrations around filleted areas</div>
+									</div>
+
+									<div class="mySlides2 fade">
+										<img src="images/BikeFrame_Results3.png" style="width:100%">
+										<div class="text">Results of the vibrations study for the original aluminium frame</div>
+									</div>
+
+									<div class="mySlides2 fade">
+										<img src="images/BikeFrame_Results4.png" style="width:100%">
+										<div class="text">Results of the fatigue study for the original aluminium frame</div>
+									</div>
+
+									<!-- Next and previous buttons -->
+									<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+									<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+								</div>
+								<!-- The dots/circles -->
+								<div style="text-align:center; margin-bottom: 2em;">
+									<span class="dot2" onclick="currentSlide(1, 1)"></span>
+									<span class="dot2" onclick="currentSlide(2, 1)"></span>
+									<span class="dot2" onclick="currentSlide(3, 1)"></span>
+									<span class="dot2" onclick="currentSlide(4, 1)"></span>
+								</div>
+							</div>
+							<div id="detail-text-area-right" class="col-8 col-7-large col-12-medium">
+								<p id="detail-sub-title">Results</p>
+								<p id="detail-para-right">Before running the simulations, a proper mesh convergence study was carried out, achieving a good quality mesh that computed in a reasonable time. This would help to increase solution accuracy.</p>
+								<p id="detail-para-right">The global element size was gradually reduced until results had converged. Furthermore, areas with higher aspect ratios or localised stress concentrations were also analysed, and mesh control was then applied accordingly.</p>
+								<p id="detail-para-right">Results indicated that the original Aluminium frame had a fundamental frequency of 37.8 Hz, and could withstand almost 3 million load cycles, both of which were above the minimum requirements. </p>
+							</div>
+						</div>
+						<!-- Phase 3 -->
+						<div class="row" id="detail-row">
+							<div id="detail-text-area-left" class="col-8 col-7-large col-12-medium">
+								<p id="detail-sub-title">Improved Design</p>
+								<p id="detail-para-left">Rationale for improvement was derived from the closed-form analytical expression of the fundamental frequency of a cantilever beam (see full report, linked below, for the equations).</p>
+								<p id="detail-para-left">This indicated that if the outer radius of a beam is fixed, by increasing the inner radius (and making the beam profile thinner), the fundamental frequency is increased. Therefore, for my improved design, I increased the beam profiles' external diameters from 30 mm to 40 mm, while reducing the thickness from 2 mm to 1 mm. </p>
+								<p id="detail-para-left">Results now highlighted that I had successfully increased the fundamental frequency, from 37.8 Hz to 48.6 Hz. Furthermore, the fatigue life had also improved, where the frame could now withstand unlimited pedal cycles.</p>
+							</div>
+							<div class="col-4 col-5-large col-12-medium" id="detail-images-area-right">
+								<div class="slideshow-container">
+									<div class="mySlides3 fade">
+										<img src="images/BikeFrame_Improved1.png" style="width:100%">
+										<div class="text">Results of the vibrations study for the improved aluminium frame</div>
+									</div>
+
+									<div class="mySlides3 fade">
+										<img src="images/BikeFrame_Improved2.png" style="width:100%">
+										<div class="text">Results of the static study for the improved aluminium frame</div>
+									</div>
+
+									<!-- Next and previous buttons -->
+									<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+									<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+								</div>
+								<!-- The dots/circles -->
+								<div style="text-align:center; margin-bottom: 2em;">
+									<span class="dot3" onclick="currentSlide(1, 2)"></span>
+									<span class="dot3" onclick="currentSlide(2, 2)"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- Skills gained -->
+				<article id="detail" class="wrapper style8">
+					<div class="container">
+						<p id="skills-title">_________ Skills Developed _________</p>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Soft Skills</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="skill-para">Iterative Design | Problem Solving</p>
+							</div>
+						</div>
+						<div class="row">
+							<div id="brief-sub-title-area" class="col-8 col-7-large col-12-medium">
+								<p id="brief-sub-title">Hard Skills</p>
+							</div>
+							<div id="brief-para-area" class="col-4 col-5-large col-12-medium">
+								<p id="skill-para">Computer Aided Design (Solidworks) | Finite Element Analysis (Solidworks Simulation) | Scientific Report Writing</p>
+							</div>
+						</div>					
+					</div>
+				</article>
+
+				<!-- Link to full process documentation -->
+				<article id="documentation-button-area" class="wrapper style8">
+					<div class="row">
+						<div class="container">
+							<div class="center">
+							<button class="btn" onclick=" window.open('https://drive.google.com/file/d/1OLae7aJHbqzckpGVVAgN5YRrwkifFJyM/view?usp=sharing','_blank')">
+								<svg width="480px" height="60px" viewBox="0 0 480 60" class="border">
+								<polyline points="479,1 479,59 1,59 1,1 479,1" class="bg-line" />
+								<polyline points="479,1 479,59 1,59 1,1 479,1" class="hl-line" />
+								</svg>
+								<span>View Final Project Report >></span>
+							</button>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- Footer -->
+				<article id="footer" class="wrapper style3">
+					<footer>
+						<ul id="copyright">
+							<li>&copy; James Skinner 2021. All rights reserved.</li>
+					</footer>
+				</article>
+
+			</main>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+			<script src="assets/js/script.js"></script>
+	</body>
+</html>
