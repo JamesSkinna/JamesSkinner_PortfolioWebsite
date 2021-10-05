@@ -1,10 +1,10 @@
-const swup = new Swup();
+// const swup = new Swup();
 
-swup.on('contentReplaced', init);
+// swup.on('contentReplaced', init);
 
-swup.on('contentReplaced', function () {
-    window.scrollTo(0, 0);
-});
+// swup.on('contentReplaced', function () {
+//     window.scrollTo(0, 0);
+// });
 
 // Code used for slideshows...
 var slideIndex = [1,1,1];
