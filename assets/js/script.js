@@ -181,6 +181,7 @@ function init() {
                     preloadImages(index + 1);
                 }
                 img.src = currentFrame(index);
+                console.log("Image loaded");
                 // console.log("Images Preloading" + index);
             } else {
                 $("#set-height").fadeOut("fast");
