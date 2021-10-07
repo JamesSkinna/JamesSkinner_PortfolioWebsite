@@ -3000,3 +3000,78 @@ input, select, textarea {
 	  margin-top: 5em;
   }
 
+  /* CSS for the page loader */
+  .loader-wrapper {
+	z-index: 9999;
+	width: 100vw;
+	height: 100vh;
+	position: sticky;
+	top: 7%;
+	left: 0;
+	background-color: #fff;
+  }
+
+  .loader-box {
+	width: 30%;
+	padding-top: 30%;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+  }
+  
+  .loader-box .b {
+	border-radius: 50%;
+	border-left: 2px solid;
+	border-right: 2px solid;
+	border-top: 2px solid transparent !important;
+	border-bottom: 2px solid transparent !important;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: ro 2s infinite;
+  }
+  
+  .loader-box .b1 {
+	border-color: #000000;
+	width: 50%;
+	height: 50%;
+  }
+  
+  .loader-box .b2 {
+	border-color: #000000;
+	width: 41.66%;
+	height: 41.66%;
+	animation-delay: 0.2s;
+  }
+  
+  .loader-box .b3 {
+	border-color: #000000;
+	width: 33.33%;
+	height: 33.33%;
+	animation-delay: 0.4s;
+  }
+  
+  .loader-box .b4 {
+	border-color: #000000;
+	width: 25%;
+	height: 25%;
+	animation-delay: 0.6s;
+  }
+  
+  @keyframes ro {
+	0% {
+	  transform: translate(-50%, -50%) rotate(0deg);
+	}
+	
+	50% {
+	  transform: translate(-50%, -50%) rotate(-180deg);
+	}
+	
+	100% {
+	  transform: translate(-50%, -50%) rotate(0deg);
+	}
+  }
+
