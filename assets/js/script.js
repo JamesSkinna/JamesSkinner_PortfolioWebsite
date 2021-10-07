@@ -1,9 +1,48 @@
-// const swup = new Swup();
+const swup = new Swup();
 
-// swup.on('contentReplaced', init);
+swup.on('contentReplaced', init);
 
-// swup.on('contentReplaced', function () {
-//     window.scrollTo(0, 0);
+swup.on('contentReplaced', function () {
+    window.scrollTo(0, 0);
+});
+
+// function unload() {
+//     if (document.querySelector('.fitbitbalance-scrolling')) {
+//         window.removeEventListener('scroll', scrollFunction(1, 165));
+//         console.log("Event removed");
+//     }
+// }
+
+// swup.on('willReplaceContent', unload);
+
+// // NEED TO MAKE SURE THIS FUNCTION HAS ACCESS TO FRAMEFIRST AND FRAMECOUNT!!!! (Just recalculate using if statements)
+// function scrollFunction(frameFirst, frameLast) {
+//     const frameCount = frameLast - frameFirst;
+//     const html = document.documentElement;
+//     const scrollTop = html.scrollTop;       //Gets the pixel in line with the top of the scroll bar (height of the top of scroll bar)
+//     const maxScrollTop = html.scrollHeight - window.innerHeight;        //Max height (in pixels) the scroll bar can move - height of the content on the page (visible content height)
+//     const pageRatio = html.scrollHeight / window.innerHeight;           //So that as the page becomes longer, the animation still plays only while you can see the video frames on screen
+//     // console.log(html.scrollHeight, window.innerHeight, maxScrollTop)
+//     const scrollFraction = (scrollTop / maxScrollTop) * pageRatio;      //Fraction of the page scrolled * ratio of video height to max scroll height
+//     // const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))    //Get the frame required to output, based on the user's scroll position
+//     const frameIndex = Math.min(frameLast - 1, Math.floor(frameFirst + (scrollFraction * frameCount)));
+//     // console.log(frameIndex)
+//     requestAnimationFrame(() => updateImage(frameIndex + 1));           //Update the frame shown in the canvas
+// }
+
+// swup.on('willReplaceContent', function () {
+//     window.removeEventListener('scroll', () => {
+//         const scrollTop = html.scrollTop;       //Gets the pixel in line with the top of the scroll bar (height of the top of scroll bar)
+//         const maxScrollTop = html.scrollHeight - window.innerHeight;        //Max height (in pixels) the scroll bar can move - height of the content on the page (visible content height)
+//         const pageRatio = html.scrollHeight / window.innerHeight;           //So that as the page becomes longer, the animation still plays only while you can see the video frames on screen
+//         // console.log(html.scrollHeight, window.innerHeight, maxScrollTop)
+//         const scrollFraction = (scrollTop / maxScrollTop) * pageRatio;      //Fraction of the page scrolled * ratio of video height to max scroll height
+//         // const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))    //Get the frame required to output, based on the user's scroll position
+//         const frameIndex = Math.min(frameLast - 1, Math.floor(frameFirst + (scrollFraction * frameCount)))
+//         // console.log(frameIndex)
+
+//         requestAnimationFrame( () => updateImage(frameIndex + 1))           //Update the frame shown in the canvas
+//     });
 // });
 
 // Code used for slideshows...
@@ -162,17 +201,24 @@ function init() {
         
         const frameCount = frameLast - frameFirst;
 
+        // OLD PRELOADER...
         // const preloadImages = () => {
-        //     for (let i = 1; i < frameCount; i++) {
+        //     for (let i = frameFirst; i < frameLast; i++) {
         //         const img = new Image();
         //         img.src = currentFrame(i);
         //     }
         // };
 
-        const preloadImages = () => {
-            for (let i = frameFirst; i < frameLast; i++) {
-                const img = new Image();
-                img.src = currentFrame(i);
+        // NEW PRELOADER...
+        const preloadImages = (index) => {
+            index = index || frameFirst;
+            if (frameLast > index) {
+                var img = new Image();
+                img.onload = function() {
+                    preloadImages(index + 1);
+                }
+                img.src = currentFrame(index);
+                // console.log("Images Preloading" + index);
             }
         };
 
@@ -193,6 +239,18 @@ function init() {
             context.drawImage(img, 0, 0);
         }
 
+        const scrollFunction = () => {
+            const scrollTop = html.scrollTop;       //Gets the pixel in line with the top of the scroll bar (height of the top of scroll bar)
+            const maxScrollTop = html.scrollHeight - window.innerHeight;        //Max height (in pixels) the scroll bar can move - height of the content on the page (visible content height)
+            const pageRatio = html.scrollHeight / window.innerHeight;           //So that as the page becomes longer, the animation still plays only while you can see the video frames on screen
+            // console.log(html.scrollHeight, window.innerHeight, maxScrollTop)
+            const scrollFraction = (scrollTop / maxScrollTop) * pageRatio;      //Fraction of the page scrolled * ratio of video height to max scroll height
+            // const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount))    //Get the frame required to output, based on the user's scroll position
+            const frameIndex = Math.min(frameLast - 1, Math.floor(frameFirst + (scrollFraction * frameCount)))
+            // console.log(frameIndex)
+            requestAnimationFrame(() => updateImage(frameIndex + 1))           //Update the frame shown in the canvas
+        }
+
         window.addEventListener('scroll', () => {
             const scrollTop = html.scrollTop;       //Gets the pixel in line with the top of the scroll bar (height of the top of scroll bar)
             const maxScrollTop = html.scrollHeight - window.innerHeight;        //Max height (in pixels) the scroll bar can move - height of the content on the page (visible content height)
@@ -203,8 +261,9 @@ function init() {
             const frameIndex = Math.min(frameLast - 1, Math.floor(frameFirst + (scrollFraction * frameCount)))
             // console.log(frameIndex)
 
-            requestAnimationFrame( () => updateImage(frameIndex + 1))           //Update the frame shown in the canvas
+            requestAnimationFrame(() => updateImage(frameIndex + 1))           //Update the frame shown in the canvas
         })
+        window.addEventListener('scroll', scrollFunction(frameFirst, frameLast));
     }
 
     // Below just runs to make sure all slideshow stuff is laid out properly on first load of webpage that contains a slideshow

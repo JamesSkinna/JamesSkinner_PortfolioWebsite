@@ -2801,33 +2801,34 @@ input, select, textarea {
 
 	/* For the scroll-animated videos */
 	#set-height {
-		/* height: 100vh; */
-		position: relative;
-		width: 100%;
-		height: 1500px;
+		/* OLD CODE... */
+		/* height: 100vh;
+		margin-bottom: 3em; */
+		/* NEW CODE... */
+		height: 1600px;
 		margin-bottom: 3em;
 	}
 
 	canvas {
-		/* width: 100%;
-		height: 0;
-		padding-top: 56.25%;
-		position: stick;
-		top: 0;
-		background-size: cover; */
 		/* OLD CODE... */
-		position: sticky;
-		/* left: 50%; */
-		top: 10%;
-		/* transform: translate(-50%, -50%); */
+		/* position: relative;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 		max-height: 100vh;
+		max-width: 100vw; */
+		/* NEW CODE... */
 		max-width: 100vw;
+		max-height: 100vh;
+		left: 5%;
+		position: sticky;
+		top: 7%;
 	}
 
 
 	/* For embedded videos */
 	video {
-		position: relative;
+		/* position: relative; */
 		/* left: 15%; */
 		width: 100%;
 		margin-bottom: 5em;
