@@ -84,7 +84,7 @@ function init() {
         }
     }
 
-    // This was the original code from the tutorial - I have since edited this into a function, below
+    // This was the original code from the tutorial - I have since edited this quite a bit, see below...
     //Code for animating the Protec Video on scroll...
     //Use this tutorial if confused... https://www.youtube.com/watch?v=4OcAAj8aqS8&t=1190s
     // if (document.querySelector('.protec-scrolling')) {      //Check to see if the Protec page is the current page
@@ -151,6 +151,30 @@ function init() {
         animateOnScroll('.segway-scrolling', 'ImgSequence_Segway/', '.jpg', 0, 119);
     } else if (document.querySelector('.spacehack-scrolling')) {
         animateOnScroll('.spacehack-scrolling', 'ImgSequence_SpaceHack/SpaceHackTest', '.jpg', 0, 180);
+    } else if (document.querySelector('#portfolio')) {
+        preloadGifs();
+    }
+
+    function preloadGifs() {
+        var gifs = new Array();
+        function preload() {
+            for (i = 0; i < preload.arguments.length; i++) {
+                gifs[i] = new Image();
+                gifs[i].src = preload.arguments[i];
+                console.log("Gif Loaded");
+            }
+        }
+        preload(
+            "/Gifs/GIF_FitbitBalance.gif",
+            "/Gifs/GIF_Protec.gif",
+            "/Gifs/GIF_RoboBug.gif",
+            "/Gifs/GIF_MotherNature.gif",
+            "/Gifs/GIF_SteadyGrip.gif",
+            "/Gifs/GIF_BikeFrame.gif",
+            "/Gifs/GIF_LeonHackathon.gif",
+            "/Gifs/GIF_Segway.gif",
+            "/Gifs/GIF_SpaceHack.gif"
+        );
     }
 
     function animateOnScroll(animationClassName, filePathName, fileExtension, frameFirst, frameLast) {
@@ -162,10 +186,7 @@ function init() {
             `/animations/${filePathName}${index.toString().padStart(4, '0')}${fileExtension}`
         )
         const frameCount = frameLast - frameFirst;
-        
-        // Message to check updates have been published
-        console.log("UPDATES CONFIRMED");
-        
+
         // OLD PRELOADER...
         // const preloadImages = () => {
         //     for (let i = frameFirst; i < frameLast; i++) {
