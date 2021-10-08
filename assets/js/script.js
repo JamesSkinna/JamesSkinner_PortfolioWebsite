@@ -134,23 +134,23 @@ function init() {
     // }
 
     if (document.querySelector('.protec-scrolling')) {      //Check to see if the Protec page is the current page
-        animateOnScroll('.protec-scrolling', 'ImgSequence_Protec/animation_protec', '.jpg', 0, 571);
+        animateOnScroll('.protec-scrolling', 'ImgSequence_Protec/', '.jpg', 0, 190);
     } else if (document.querySelector('.fitbitbalance-scrolling')) {
-        animateOnScroll('.fitbitbalance-scrolling', 'ImgSequence_FitbitBalance/', '.png', 1, 165);
+        animateOnScroll('.fitbitbalance-scrolling', 'ImgSequence_FitbitBalance/', '.jpg', 0, 82);
     } else if (document.querySelector('.robobug-scrolling')) {
-        animateOnScroll('.robobug-scrolling', 'ImgSequence_RoboBug/', '.png', 0, 360);
+        animateOnScroll('.robobug-scrolling', 'ImgSequence_RoboBug/', '.jpg', 0, 119);
     } else if (document.querySelector('.pregtest-scrolling')) {
-        animateOnScroll('.pregtest-scrolling', 'ImgSequence_PregTest/', '.png', 60, 460);
+        animateOnScroll('.pregtest-scrolling', 'ImgSequence_MotherNature/', '.jpg', 0, 133);
     } else if (document.querySelector('.steadygrip-scrolling')) {
-        animateOnScroll('.steadygrip-scrolling', 'ImgSequence_SteadyGrip/', '.png', 0, 170);
+        animateOnScroll('.steadygrip-scrolling', 'ImgSequence_SteadyGrip/', '.jpg', 0, 170);
     } else if (document.querySelector('.bikeframe-scrolling')) {
-        animateOnScroll('.bikeframe-scrolling', 'ImgSequence_BikeFrame/', '.png', 1, 180);
+        animateOnScroll('.bikeframe-scrolling', 'ImgSequence_BikeFrame/', '.jpg', 0, 89);
     } else if (document.querySelector('.leonhackathon-scrolling')) {
-        animateOnScroll('.leonhackathon-scrolling', 'ImgSequence_LeonHackathon/', '.png', 0, 220);
+        animateOnScroll('.leonhackathon-scrolling', 'ImgSequence_LeonHackathon/', '.jpg', 0, 110);
     } else if (document.querySelector('.segway-scrolling')) {
-        animateOnScroll('.segway-scrolling', 'ImgSequence_Segway/animation_segway', '.jpg', 0, 239);
+        animateOnScroll('.segway-scrolling', 'ImgSequence_Segway/', '.jpg', 0, 119);
     } else if (document.querySelector('.spacehack-scrolling')) {
-        animateOnScroll('.spacehack-scrolling', 'ImgSequence_SpaceHack/', '.png', 0, 360);
+        animateOnScroll('.spacehack-scrolling', 'ImgSequence_SpaceHack/SpaceHackTest', '.jpg', 0, 180);
     }
 
     function animateOnScroll(animationClassName, filePathName, fileExtension, frameFirst, frameLast) {
@@ -161,9 +161,11 @@ function init() {
         const currentFrame = index => (
             `/animations/${filePathName}${index.toString().padStart(4, '0')}${fileExtension}`
         )
-        
         const frameCount = frameLast - frameFirst;
-
+        
+        // Message to check updates have been published
+        console.log("UPDATES CONFIRMED");
+        
         // OLD PRELOADER...
         // const preloadImages = () => {
         //     for (let i = frameFirst; i < frameLast; i++) {
@@ -173,21 +175,42 @@ function init() {
         // };
 
         // NEW PRELOADER (with loading animation before all images are loaded)...
-        const preloadImages = (index) => {
-            index = index || frameFirst;
-            if (frameLast > index) {
-                var img = new Image();
-                img.onload = function() {
-                    preloadImages(index + 1);
+        // const preloadImages = (index) => {
+        //     index = index || frameFirst;
+        //     if (frameLast > index) {
+        //         var img = new Image();
+        //         img.onload = function() {
+        //             preloadImages(index + 1);
+        //         }
+        //         img.src = currentFrame(index);
+        //         console.log("Image loaded");
+        //         // console.log("Images Preloading" + index);
+        //     } else {
+        //         $("#set-height").fadeOut("fast");
+        //         $(".loader-wrapper").fadeOut(500);
+        //         $("#set-height").fadeIn(1000);
+        //     };
+        // };
+
+        // FINAL PRELOADER (Optimising page loading time)
+        const preloadImages = () => {
+            var imgcount = 0; //Counting the number of images that have loaded
+            var pageloaded = false;
+            for (let i = frameFirst; i < frameLast; i++) {
+                const img = new Image();
+                img.src = currentFrame(i);
+                img.onload = function () {
+                    imgcount += 1;
+                    if (imgcount > frameCount/2) {  //when more than 1/2 the frames have been loaded...
+                        if (pageloaded == false) {  //load the page...
+                            pageloaded = true;
+                            $("#set-height").fadeOut("fast");
+                            $(".loader-wrapper").fadeOut(500);
+                            $("#set-height").fadeIn(1000);
+                        }
+                    }
                 }
-                img.src = currentFrame(index);
-                console.log("Image loaded");
-                // console.log("Images Preloading" + index);
-            } else {
-                $("#set-height").fadeOut("fast");
-                $(".loader-wrapper").fadeOut(500);
-                $("#set-height").fadeIn(1000);
-            };
+            }
         };
 
         preloadImages();
