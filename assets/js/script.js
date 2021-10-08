@@ -161,7 +161,7 @@ function init() {
             for (i = 0; i < preload.arguments.length; i++) {
                 gifs[i] = new Image();
                 gifs[i].src = preload.arguments[i];
-                console.log("Gif Loaded");
+                // console.log("Gif Loaded");
             }
         }
         preload(

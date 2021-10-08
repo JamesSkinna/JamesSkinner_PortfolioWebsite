@@ -247,11 +247,13 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			.container {
-				width: 960px;
+				/* width: 960px; */
+				width: 1200px;
 			}
 
 				.container.medium {
-					width: 720px;
+					/* width: 720px; */
+					width: 900px;
 				}
 
 		}
@@ -2226,7 +2228,7 @@ input, select, textarea {
 		z-index: 10000;
 		cursor: default;
 		height: 5em;
-		line-height: 5em;
+		line-height: 5.2em;
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
 	}
 
@@ -2279,18 +2281,31 @@ input, select, textarea {
 				}
 
 	.logo-wrap {
-		width: 65%;
+		width: 30%;
 		font-size: 30px;
 		font-style: normal;
 		font-weight: 500;
+		position: absolute; 
+  		left: 0; 
+  		right: 0; 
+  		margin-left: auto; 
+  		margin-right: auto; 
 	}
 
 	.nav-items {
-		width: 17%;
+		width: 47%;
+	}
+
+	#nav-items-box {
+		float: left;
 	}
 
 	.nav-social {
-		width: 14%;
+		width: 47%;
+	}
+
+	#nav-social-box {
+		float: right;
 	}
 
 	#name {
@@ -2466,7 +2481,7 @@ input, select, textarea {
 		/* Articles */
 
 			#top {
-				padding: 8em 0;
+				/* padding: 8em 0; */
 			}
 
 				#top .image {
