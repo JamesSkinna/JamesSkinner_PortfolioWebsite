@@ -1402,7 +1402,7 @@ input, select, textarea {
 				}
 
 				.row > .col-12-small {
-					width: 100%;
+					width: 95%;
 				}
 
 				.row > .off-12-small {
@@ -2281,8 +2281,8 @@ input, select, textarea {
 				}
 
 	.logo-wrap {
-		width: 30%;
-		font-size: 30px;
+		width: 100%;
+		font-size: 20px;
 		font-style: normal;
 		font-weight: 500;
 		position: absolute; 
@@ -2297,7 +2297,7 @@ input, select, textarea {
 	}
 
 	#nav-items-box {
-		float: left;
+		display: none;
 	}
 
 	.nav-social {
@@ -2305,7 +2305,7 @@ input, select, textarea {
 	}
 
 	#nav-social-box {
-		float: right;
+		display: none;
 	}
 
 	#name {
@@ -2636,7 +2636,7 @@ input, select, textarea {
 					left: 20px;
 					top: 20px;
 					margin: -50px 0 50px -40px;
-					width: auto;
+					width: 113%;
 				}
 
 				.box.style1 {
@@ -2647,6 +2647,7 @@ input, select, textarea {
 
 				.box.style2 {
 					max-width: 32em;
+					max-height: 21.7em;
 					margin-left: auto !important;
 					margin-right: auto !important;
 				}
@@ -2679,7 +2680,7 @@ input, select, textarea {
 		/* Articles */
 
 			#top {
-				padding: 3em 0;
+				padding: 0.7em 0;
 			}
 
 				#top .image {
@@ -2689,7 +2690,7 @@ input, select, textarea {
 				}
 
 				#top p {
-					font-size: 1em;
+					font-size: 0.4em;
 				}
 
 			#contact footer {
