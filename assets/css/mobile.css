@@ -1864,12 +1864,12 @@ input, select, textarea {
 		}
 
 		/* .box.style2 .image {
-			/* position: relative;
+			position: relative;
 			left: 2em;
 			top: 2em;
 			margin: -4em 0 0 -4em;
-			width: auto; */
-		} */
+			width: auto;
+		}  */
 
 /* Icons */
 
@@ -2531,9 +2531,9 @@ input, select, textarea {
 
 		/* Articles */
 
-			#top {
-				/* padding: 8em 0; */
-			}
+			/* #top {
+				padding: 8em 0;
+			} */
 
 				#top .image {
 					width: 24em;
