@@ -2564,7 +2564,7 @@ input, select, textarea {
 
 			#top {
 				text-align: center;
-				padding: 5em 0;
+				padding: 0 0;
 			}
 
 				#top .image {
@@ -2714,6 +2714,7 @@ input, select, textarea {
 					max-height: 21.7em; */
 					margin-left: auto !important;
 					margin-right: auto !important;
+					max-width: 400px;
 				}
 
 		/* Wrappers */
@@ -2781,6 +2782,16 @@ input, select, textarea {
 					#copyright li:first-child {
 						margin-top: 0;
 					}
+
+	}
+
+/* Galaxy Fold Small */
+	@media screen and (max-width: 327px) {
+
+		/* My Name Logo */
+		#name {
+			font-size: 80% !important;
+		}
 
 	}
 

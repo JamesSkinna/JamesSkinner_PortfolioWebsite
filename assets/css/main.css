@@ -1648,7 +1648,7 @@ input, select, textarea {
 		.image.featured {
 			display: block;
 			width: 100%;
-			margin: 0 0 2em 0;
+			/* margin: 0 0 2em 0; */
 			transition: .5s ease;
 		}
 
@@ -1847,7 +1847,7 @@ input, select, textarea {
 		background: #fff;
 		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 		text-align: center;
-		padding: 2em;
+		/* padding: 2em; */
 		border-radius: 6px;
 	}
 
@@ -1865,10 +1865,11 @@ input, select, textarea {
 
 		.box.style2 .image {
 			position: relative;
-			left: 2em;
+			/* left: 2em;
 			top: 2em;
 			margin: -4em 0 0 -4em;
-			width: auto;
+			width: auto; */
+			width: 100%;
 		}
 
 /* Icons */
@@ -2508,12 +2509,21 @@ input, select, textarea {
 
 			#top {
 				text-align: center;
-				padding: 5em 0;
+				/* padding: 5em 0; */
 			}
 
 				#top .image {
 					margin: 0 auto 2em auto;
 				}
+
+	}
+
+	@media screen and (max-width: 895px) {
+
+		/* My Name Logo */
+		#name {
+			font-size: 80%;
+		}
 
 	}
 
