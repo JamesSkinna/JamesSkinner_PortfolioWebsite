@@ -286,3 +286,15 @@ function init() {
 }
 
 init();
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+    sideNavBtn = document.getElementById("side-nav-button");
+    sideNavBtn.setAttribute("onClick", "closeNav()");
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    sideNavBtn = document.getElementById("side-nav-button");
+    sideNavBtn.setAttribute("onClick", "openNav()");
+  }

@@ -7,17 +7,31 @@
 		<title>James Skinner | Steady Grip</title>
 		<meta charset="UTF-16">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" media="only screen and (min-width: 701px)" href="assets/css/main.css" />
+		<link rel="stylesheet" media="only screen and (max-width: 700px)" href="assets/css/mobile.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 		<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
 	</head>
 	<body class="is-preload">
 
+		<!-- Side Nav (For Mobile Only) -->
+		<div id="mySidenav" class="sidenav">
+			<a href="/" onclick="closeNav()">Portfolio</a>
+			<a href="/about.html" onclick="closeNav()">About</a>
+			<a href="https://drive.google.com/file/d/1K64OiiqC1p1I3jo7rJG493wtHMK5fFiA/view?usp=sharing" target="_blank">CV</a>
+			<a id="linked-in-icon" href="https://www.linkedin.com/in/james-skinner-26004a1a4/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a>
+			<a id="instagram-icon" href="https://www.instagram.com/js_engineering_design/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+		</div>
+
 		<!-- Nav -->
 			<nav id="nav">
 				<li class="nav-items">	
 					<ul id="nav-items-box">
+						<!-- SideNav Button (Mobile only) -->
+						<li><a id="side-nav-button" onclick="openNav()">&#9776;</a></li>
+						<!-- <li><a id="side-nav-button" href="#top">&#9776;</a></li> -->
+						<!-- Other buttons (Desktop Only) -->
 						<li><a id="portfolio-title" href="/">Portfolio</a></li>
 						<li><a id="about-title" href="/about.html">About</a></li>
 						<li><a id="cv-title" href="https://drive.google.com/file/d/1K64OiiqC1p1I3jo7rJG493wtHMK5fFiA/view?usp=sharing" target="_blank">CV</a></li>

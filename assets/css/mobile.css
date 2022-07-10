@@ -1939,7 +1939,7 @@ input, select, textarea {
 			background-image: none;
 			background-color: #fff;
 			color: rgb(3, 3, 3);
-			padding: 0.5em 0 5em 0;
+			padding: 0.5em 0 2em 0;
 		}
 		/* Portfolio Footer */
 		.wrapper.style3 {
@@ -2317,12 +2317,24 @@ input, select, textarea {
 		color: rgb(54, 54, 54);
 	}
 
+	#side-nav-button:hover {
+		color: rgb(54, 54, 54) !important;
+	}
+
 	#name {
 		color: rgb(54, 54, 54);
 	}
 
-	#about-title, #portfolio-title, #cv-title, #instagram-icon, #linked-in-icon {
+	/* #about-title, #portfolio-title, #cv-title, #instagram-icon, #linked-in-icon {
 		color: rgb(0, 0, 0);
+	} */
+
+	#linked-in-icon {
+		color: rgb(0, 119, 181);
+	}
+
+	#instagram-icon {
+		color: rgb(221, 42, 123);
 	}
 
 	#instagram-icon:hover {
@@ -2366,7 +2378,8 @@ input, select, textarea {
   }
   
   .sidenav a:hover{
-	color: #f1f1f1;
+	color: rgb(54, 54, 54) !important;
+	background: #eee;
   }
   
   .sidenav .closebtn {
@@ -2594,9 +2607,9 @@ input, select, textarea {
 					font-size: 1.25em;
 				}
 
-			footer {
+			/* footer {
 				margin: 2.5em 0 0 0;
-			}
+			} */
 
 				footer > p {
 					font-size: 1.25em;
