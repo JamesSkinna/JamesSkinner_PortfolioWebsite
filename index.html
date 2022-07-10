@@ -15,10 +15,21 @@
 	</head>
 	<body class="is-preload">
 
+		<!-- Side Nav (For Mobile Only) -->
+		<div id="mySidenav" class="sidenav">
+			<a href="/#nav" onclick="closeNav()">Portfolio</a>
+			<a href="#">About</a>
+			<a href="#">CV</a>
+			<a href="#">Connect</a>
+			<a href="#">Follow</a>
+		</div>
+
 		<!-- Nav -->
 			<nav id="nav">
 					<li class="nav-items">	
 						<ul id="nav-items-box">
+							<!-- SideNav Button (Mobile only) -->
+							<li><a id="side-nav-button" onclick="openNav()">&#9776;</a></li>
 							<li><a id="portfolio-title" href="/">Portfolio</a></li>
 							<li><a id="about-title" href="/about.html">About</a></li>
 							<li><a id="cv-title" href="https://drive.google.com/file/d/1K64OiiqC1p1I3jo7rJG493wtHMK5fFiA/view?usp=sharing" target="_blank">CV</a></li>
@@ -26,7 +37,7 @@
 					</li>
 					<li class="logo-wrap">
 						<ul>
-								<li><a id="name" href="#top">James Skinner</a></li>
+								<li><a id="name" >James Skinner</a></li>
 						</ul>
 					</li>
 					<li class="nav-social">
@@ -47,7 +58,7 @@
 				<article id="top" class="wrapper style1">
 					<div class="container">
 							<div class="col-8 col-7-large col-12-medium">
-								<p id="intro-para">Hi, I'm James. I am an engineer who loves to solve real-world problems from an interdisciplinary perspective, and design products that address the key user needs.</p>
+								<p id="intro-para">Hi, I'm James. I'm an engineer who loves to solve real-world problems from an interdisciplinary perspective, and design products that address the key user needs.</p>
 							</div>
 					</div>
 				</article>
@@ -184,5 +195,14 @@
 			<script src="assets/js/main.js"></script>
 			<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
 			<script src="assets/js/script.js"></script>
+			<script>
+				function openNav() {
+				  document.getElementById("mySidenav").style.width = "100%";
+				}
+				
+				function closeNav() {
+				  document.getElementById("mySidenav").style.width = "0";
+				}
+			</script>
 	</body>
 </html>

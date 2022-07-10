@@ -1648,7 +1648,7 @@ input, select, textarea {
 		.image.featured {
 			display: block;
 			width: 100%;
-			margin: 0 0 2em 0;
+			/* margin: 0 0 2em 0; */
 			transition: .5s ease;
 		}
 
@@ -1847,7 +1847,7 @@ input, select, textarea {
 		background: #fff;
 		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 		text-align: center;
-		padding: 2em;
+		/* padding: 2em; */
 		border-radius: 6px;
 	}
 
@@ -1863,13 +1863,13 @@ input, select, textarea {
 			margin-bottom: 0.25em;
 		}
 
-		.box.style2 .image {
-			position: relative;
+		/* .box.style2 .image {
+			/* position: relative;
 			left: 2em;
 			top: 2em;
 			margin: -4em 0 0 -4em;
-			width: auto;
-		}
+			width: auto; */
+		} */
 
 /* Icons */
 
@@ -2013,7 +2013,7 @@ input, select, textarea {
 		margin-bottom: 1em;
 		font-weight: 600;
 		text-align: center;
-		width: 80%;
+		width: 90%;
 	}
 
 	#about-me-para {
@@ -2281,7 +2281,7 @@ input, select, textarea {
 				}
 
 	.logo-wrap {
-		width: 100%;
+		width: 60%;
 		font-size: 20px;
 		font-style: normal;
 		font-weight: 500;
@@ -2297,7 +2297,12 @@ input, select, textarea {
 	}
 
 	#nav-items-box {
-		display: none;
+		text-align: left;
+	}
+
+	
+	#portfolio-title, #about-title, #cv-title {
+		display: none !important;
 	}
 
 	.nav-social {
@@ -2306,6 +2311,10 @@ input, select, textarea {
 
 	#nav-social-box {
 		display: none;
+	}
+
+	#side-nav-button {
+		color: rgb(54, 54, 54);
 	}
 
 	#name {
@@ -2330,6 +2339,48 @@ input, select, textarea {
 		color: rgb(0, 0, 0) !important;
 		background: #f7f7f7;
 	}
+
+/* Side Nav - MOBILE ONLY */
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgb(54, 54, 54);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	text-align:center;
+  }
+  
+  .sidenav a {
+	padding: 8px 8px 8px 8px;
+	text-decoration: none;
+	font-size: 1.6em;
+	color: #eee;
+	display: block;
+	transition: 0.3s;
+  
+  }
+  
+  .sidenav a:hover{
+	color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+  }
 
 /* Articles */
 
@@ -2619,7 +2670,7 @@ input, select, textarea {
 		/* Box */
 
 			.box {
-				padding: 30px 20px 30px 20px;
+				/* padding: 30px 20px 30px 20px; */
 				margin: 0 0 20px 0 !important;
 			}
 
@@ -2631,13 +2682,13 @@ input, select, textarea {
 					margin-bottom: 1em;
 				}
 
-				.box .image.featured {
+				/* .box .image.featured {
 					position: relative;
 					left: 20px;
 					top: 20px;
 					margin: -50px 0 50px -40px;
 					width: 113%;
-				}
+				} */
 
 				.box.style1 {
 					max-width: 32em;
@@ -2646,8 +2697,8 @@ input, select, textarea {
 				}
 
 				.box.style2 {
-					max-width: 32em;
-					max-height: 21.7em;
+					/* max-width: 32em;
+					max-height: 21.7em; */
 					margin-left: auto !important;
 					margin-right: auto !important;
 				}
@@ -2671,6 +2722,8 @@ input, select, textarea {
 					height: inherit;
 					line-height: inherit;
 					border-radius: 0;
+					font-size: 1.2em;
+					font-weight: 100;
 				}
 
 					#nav a:hover {
@@ -2680,7 +2733,7 @@ input, select, textarea {
 		/* Articles */
 
 			#top {
-				padding: 0.7em 0;
+				padding: 0.7em 0 0 0;
 			}
 
 				#top .image {
@@ -2690,7 +2743,7 @@ input, select, textarea {
 				}
 
 				#top p {
-					font-size: 0.4em;
+					font-size: 0.55em;
 				}
 
 			#contact footer {

@@ -2249,14 +2249,14 @@ input, select, textarea {
 			-ms-transition: background-color .2s ease-in-out;
 			transition: background-color .2s ease-in-out;
 			position: relative;
-			display: block;
+			/* display: block; */
 			text-decoration: none;
 			outline: 0;
 			border-radius: 8px;
 			/* color: rgb(0, 0, 0); */
 			height: 2.5em;
 			line-height: 2.5em;
-			padding: 0 1.25em;
+			padding: 0.5em 1.25em;
 		}
 
 			#nav a:hover {
@@ -2309,7 +2309,11 @@ input, select, textarea {
 	}
 
 	#name {
-		color: rgb(54, 54, 54);
+		color: rgb(54, 54, 54) !important;
+	}
+
+	#name:hover {
+		background: #ffffff !important;
 	}
 
 	#about-title, #portfolio-title, #cv-title, #instagram-icon, #linked-in-icon {
@@ -2326,9 +2330,13 @@ input, select, textarea {
 		background: #f7f7f7;
 	}
 
-	#name:hover, #about-title:hover, #cv-title:hover, #portfolio-title:hover {
+	#about-title:hover, #cv-title:hover, #portfolio-title:hover {
 		color: rgb(0, 0, 0) !important;
 		background: #f7f7f7;
+	}
+
+	#mySidenav, #side-nav-button {
+		display: none;
 	}
 
 /* Articles */
