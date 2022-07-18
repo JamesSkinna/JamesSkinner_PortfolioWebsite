@@ -1402,7 +1402,7 @@ input, select, textarea {
 				}
 
 				.row > .col-12-small {
-					width: 95%;
+					width: 85%;
 				}
 
 				.row > .off-12-small {
@@ -1636,8 +1636,8 @@ input, select, textarea {
 	}
 
 		.image img {
-			display: block;
 			width: 100%;
+			max-width: 350px;
 		}
 
 		.image.fit {
@@ -1672,11 +1672,18 @@ input, select, textarea {
 			}
 		
 		.image-spare {
-			display: block;
-			width: 100%;
+			width: 70%;
 			border-radius: 50%;
-			margin-top: 1em;
+			max-width: 350px;
 		}
+
+	#image-spare-remove-mobile {
+		display: none;
+	}
+
+	#desktopAboutMeImg {
+		display: none;
+	}
 
 /* List */
 
@@ -2020,8 +2027,7 @@ input, select, textarea {
 		margin: 0 auto;
 		margin-bottom: 1em;
 		font-weight: 300;
-		text-align: right;
-		text-align-last: right;
+		text-align: left;
 		font-size: 19px;
 	}
 
@@ -2029,14 +2035,15 @@ input, select, textarea {
 		margin: 0 auto;
 		margin-bottom: 0.5em;
 		font-weight: 600;
-		text-align: right;
-		font-size: 30px;
+		text-align: left;
+		font-size: 0.75 em;
 	}
 
 	#about-me-text-area {
-	    margin: 0  30px 20px;
-		width: 60%;
-		margin-top: 3em;
+	    margin: 0  30px 10px;
+		width: 75%;
+		margin-top: 0.5em;
+		font-size: 2em;
 	}
 
 	#spare-time-title {
@@ -2060,14 +2067,14 @@ input, select, textarea {
 		margin-bottom: 0.5em;
 		font-weight: 600;
 		text-align: left;
-		font-size: 30px;
+		font-size: 1em !important;
 	}
 
 	#awards-sub-title {
 		margin: 0 auto;
 		font-weight: 600;
 		text-align: left;
-		font-size: 19px;
+		font-size: 1em !important;
 	}
 
 	#awards-para {
@@ -2075,14 +2082,24 @@ input, select, textarea {
 		margin-bottom: 1em;
 		font-weight: 300;
 		text-align: left;
-		font-size: 19px;
+		font-size: 1em !important;
 	}
 
 	#contact-para {
 		margin: 0 auto;
 		font-weight: 600;
 		text-align: center;
-		font-size: 19px;
+		font-size: 1em !important;
+		padding-bottom: 2em;
+	}
+
+	#awards-container {
+		width: 70%;
+		margin-top: 1em;
+	}
+
+	#contact-container {
+		width: 70%;
 	}
 
 	/* Below styling is for project pages (standard for all...) */
@@ -2570,7 +2587,7 @@ input, select, textarea {
 			}
 
 				#top .image {
-					margin: 0 auto 2em auto;
+					margin: 2em 0 0 0;
 				}
 
 	}
@@ -2753,9 +2770,9 @@ input, select, textarea {
 			}
 
 				#top .image {
-					width: 15em;
-					height: 15em;
-					margin-bottom: 0;
+					width: 75%;
+					height: 100%;
+					/* margin-top: 0.5 em; */
 				}
 
 				#top p {

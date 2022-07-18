@@ -60,6 +60,8 @@
 				<article id="top" class="wrapper style4">
 					<div class="container">
 						<div class="row">
+							<!-- Mobile only - image before description (hidden on browser) -->
+							<span id="mobileAboutMeImg" class="image fit"><img src="images/AboutMe3.jpg" alt="" /></span>
 							<div id="about-me-text-area" class="col-8 col-7-large col-12-medium">
 								<p id="about-me-title">A bit about myself</p>
 								<p id="about-me-para">I am from Bournemouth, and I am currently studying Design Engineering at Imperial College London. I am passionate about new technology, and am always looking to implement my understanding and expertise to create new products that will have a beneficial impact on the world.</p>
@@ -67,8 +69,9 @@
 									of technical engineering principals, backed up by a recognised performance history of good design, and the ability to communicate with both end users and industry professionals across multiple disciplines.</p>
 								<p id="about-me-para">In my spare time, I enjoy travelling to new locations, capturing the action with drone photography, and playing football - having captained the 4s team at Imperial. These activities help my mind to relax, so that I can fully focus and engage when solving challenging problems.</p>
 							</div>
-							<div class="col-4 col-5-large col-12-medium">
-								<span class="image fit"><img src="images/AboutMe.jpg" alt="" /></span>
+							<!-- Desktop only -->
+							<div id="desktopAboutMeImg" class="col-4 col-5-large col-12-medium">
+								<span class="image fit"><img src="images/AboutMe2.jpg" alt="" /></span>
 							</div>
 						</div>
 					</div>
@@ -80,7 +83,7 @@
 						<!-- <p id="spare-time-title">In my spare time</p> -->
 						<!-- <p id="spare-time-para"></p> -->
 						<div class="row">
-							<div class="col-13 col-5-large col-12-medium">
+							<div id="image-spare-remove-mobile" class="col-13 col-5-large col-12-medium">
 								<span ><img class="image-spare" src="images/SpareTime1.jpg" alt="" /></span>
 							</div>
 							<div class="col-13 col-5-large col-12-medium">
@@ -96,7 +99,7 @@
 
 				<!-- Awards -->
 				<article id="top" class="wrapper style6">
-					<div class="container">
+					<div id="awards-container" class="container">
 						<p id="awards-title">Awards & Achievements</p>
 						<p id="awards-sub-title">2021: <a href="https://www.imperial.ac.uk/design-engineering/study/meng/student-prizes/" target="_blank">Dean's List</a> - Imperial College London</p>
 						<p id="awards-para">The Undergraduate Dean’s List contains students from our MEng programme that are within the top 10% of their cohort and have achieved the equivalent of a 1st for the year (equal to or above 70% year average). This was for my second year of study.</p>
@@ -113,7 +116,7 @@
 
 				<!-- Contact -->
 				<article id="top" class="wrapper style7">
-					<div class="container">
+					<div id="contact-container" class="container">
 						<p id="contact-para">Thank you for viewing my portfolio. Please feel free to contact me at <a href="mailto:jts19@ic.ac.uk">jts19@ic.ac.uk</a>, or through <a href="https://www.linkedin.com/in/james-skinner-26004a1a4/" target="_blank">LinkedIn</a></p>
 					</div>
 				</article>

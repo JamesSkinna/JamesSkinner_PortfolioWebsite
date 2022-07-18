@@ -1678,6 +1678,10 @@ input, select, textarea {
 			margin-top: 1em;
 		}
 
+	#mobileAboutMeImg {
+		display: none;
+	}
+
 /* List */
 
 	ul {
