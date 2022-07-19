@@ -1638,6 +1638,7 @@ input, select, textarea {
 		.image img {
 			width: 100%;
 			max-width: 350px;
+			border-radius: 10%;
 		}
 
 		.image.fit {
@@ -1672,7 +1673,7 @@ input, select, textarea {
 			}
 		
 		.image-spare {
-			width: 70%;
+			width: 80%;
 			border-radius: 50%;
 			max-width: 350px;
 		}
@@ -2041,7 +2042,7 @@ input, select, textarea {
 
 	#about-me-text-area {
 	    margin: 0  30px 10px;
-		width: 75%;
+		width: 85%;
 		margin-top: 0.5em;
 		font-size: 2em;
 	}
@@ -2067,14 +2068,14 @@ input, select, textarea {
 		margin-bottom: 0.5em;
 		font-weight: 600;
 		text-align: left;
-		font-size: 1em !important;
+		font-size: 1.1em !important;
 	}
 
 	#awards-sub-title {
 		margin: 0 auto;
 		font-weight: 600;
 		text-align: left;
-		font-size: 1em !important;
+		font-size: 1.1em !important;
 	}
 
 	#awards-para {
@@ -2094,7 +2095,7 @@ input, select, textarea {
 	}
 
 	#awards-container {
-		width: 70%;
+		width: 75%;
 		margin-top: 1em;
 	}
 
@@ -2770,7 +2771,7 @@ input, select, textarea {
 			}
 
 				#top .image {
-					width: 75%;
+					width: 85%;
 					height: 100%;
 					/* margin-top: 0.5 em; */
 				}
