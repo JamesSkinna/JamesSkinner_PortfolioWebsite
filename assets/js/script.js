@@ -283,6 +283,48 @@ function init() {
         currentSlide(1, 1);
         currentSlide(1, 2);
     }
+
+    // Alt functionality for touchscreen devices
+    function is_touch_enabled() {
+        return ( 'ontouchstart' in window ) ||
+               ( navigator.maxTouchPoints > 0 ) ||
+               ( navigator.msMaxTouchPoints > 0 );
+    }
+
+    if (is_touch_enabled()) {
+        // For each featured project...
+        const featured_links = document.querySelectorAll(".featured-link");
+        featured_links.forEach(feat_link => {
+            // Save the link to the project page
+            page_link = feat_link.getAttribute("href");
+            // Disable link (so clicking on it 1st time doesn't change the page - just provides more info & swaps to gif
+            feat_link.setAttribute("href", "javascript:void(0)");
+
+            // Click once to enable the link (so if we click again, we navigate to project page
+            function delay(time) {
+                return new Promise(resolve => setTimeout(resolve, time));
+            }
+            // ***NOTE: The 'function(index){})(closed_link) is required because of 'closure'
+            // Otherwise, the event listener will always return the final 'closed_link', as it's stored as a global variable
+            // i.e. when any eventlistener is activated, the 'spacehack' link is always set (last one in the loop)
+            (function(closed_link){
+                feat_link.addEventListener("mouseup", function handleClick(event) {
+                    // Need a very small delay, otherwise will click new link & change page
+                    delay(1).then(() => feat_link.setAttribute("href", closed_link));
+                });
+            })(page_link)
+
+            // If click elsewhere, disable the link again
+            document.addEventListener("click", (event) => {
+                const isClickInside = feat_link.contains(event.target);
+                if (!isClickInside) {
+                    // Set to the correct attribute in the list, based on the count!
+                    feat_link.setAttribute("href", "javascript:void(0)");
+                }
+            });
+        });
+    }
+
 }
 
 init();
@@ -298,3 +340,18 @@ function openNav() {
     sideNavBtn = document.getElementById("side-nav-button");
     sideNavBtn.setAttribute("onClick", "openNav()");
   }
+
+
+// Alternative to hover functionality, for touchscreen devices (portfolio page)
+/* If touchscreen {
+    remove onmouseenter functionality
+    add onclick event {
+        no link to follow
+        show middle, switch to gif, and activate link
+    } 
+    when clicking outside the element {
+        de-activate onclick event (go back to still image)
+    }
+}
+
+ else do nothing */
