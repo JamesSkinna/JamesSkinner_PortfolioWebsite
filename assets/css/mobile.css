@@ -1402,7 +1402,7 @@ input, select, textarea {
 				}
 
 				.row > .col-12-small {
-					width: 85%;
+					width: 45%;
 				}
 
 				.row > .off-12-small {
@@ -2022,6 +2022,7 @@ input, select, textarea {
 		font-weight: 600;
 		text-align: center;
 		width: 90%;
+		/* font-size: 3vw !important; */
 	}
 
 	#about-me-para {
@@ -2458,15 +2459,11 @@ input, select, textarea {
 		transition: .5s ease;
 		opacity: 0;
 		position: absolute;
-		top: 55%;
-		left: 54%;
-		transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-		/* text-align: justify; */
-    	text-align-last: center;
-		width: 80%;
+		top: 0;
+		height: 100%;
 		pointer-events: none;
-	  }
+		padding: calc(25px + 13%) 10% 0 10%;
+ 	  }
 	  
 	  .box.style2:hover .image {
 		opacity: 0.5;
@@ -2478,18 +2475,18 @@ input, select, textarea {
 	  
 	  .hero-text-title {
 		color: rgb(0, 0, 0);
-		font-size: 30px;
+		font-size: 3.5vw;
 		font-weight: 600;
-		padding: 8px 32px;
+		padding: 8px 0;
 		text-align: center;
 	  }
 
 	  .hero-text-body {
 		color: rgb(0, 0, 0);
-		font-size: 20px;
-		padding: 8px 32px;
-		text-align: justify;
-		text-align-last: center;
+		font-size: 2.4vw;
+		line-height: 3vw;
+		padding: 8px 0;
+		text-align: center;
 	  }
 
 /* Copyright */
@@ -2702,10 +2699,10 @@ input, select, textarea {
 
 		/* Box */
 
-			.box {
-				/* padding: 30px 20px 30px 20px; */
+			/* .box {
+				padding: 30px 20px 30px 20px;
 				margin: 0 0 20px 0 !important;
-			}
+			} */
 
 				.box h3 {
 					margin-bottom: 0.25em;
@@ -2804,6 +2801,31 @@ input, select, textarea {
 					}
 
 	}
+
+/* Mobile */
+	@media screen and (max-width: 570px) {
+		.row > .col-12-small {
+			width: 85%;
+		}
+
+		.box.style2 {
+			margin-bottom: 20px !important;
+		}
+
+		.hero-text-body {
+			font-size: 4.5vw !important;
+			line-height: 6vw !important;
+		}
+
+		.hero-text-title {
+			font-size: 6vw !important;
+		}
+
+		#intro-para {
+			font-size: 4.2vw !important;
+		}
+	}
+
 
 /* Galaxy Fold Small */
 	@media screen and (max-width: 327px) {
@@ -3187,4 +3209,3 @@ input, select, textarea {
 	  transform: translate(-50%, -50%) rotate(0deg);
 	}
   }
-

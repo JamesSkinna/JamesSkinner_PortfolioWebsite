@@ -256,6 +256,39 @@ input, select, textarea {
 					width: 900px;
 				}
 
+			.hero-text-title {
+				font-size: 2.5vw !important;
+			}
+
+			.hero-text-body {
+				font-size: 1.6vw !important;
+				line-height: 2.5vw;
+			}
+
+			#intro-para {
+				font-size: 2vw !important;
+			}
+
+			#about-me-para {
+				font-size: 1.5vw !important;
+			}
+
+			#about-me-title {
+				font-size: 2.5vw !important;
+			}
+
+			#awards-title {
+				font-size: 2.5vw !important;
+			}
+
+			#awards-sub-title, #awards-para {
+				font-size: 1.6vw !important;
+			}
+
+			#contact-para {
+				font-size: 1.8vw !important
+			}
+			
 		}
 
 		@media screen and (max-width: 980px) {
@@ -1110,7 +1143,7 @@ input, select, textarea {
 				}
 
 				.row > .col-6-medium {
-					width: 50%;
+					width: 45%;
 				}
 
 				.row > .off-6-medium {
@@ -2407,24 +2440,11 @@ input, select, textarea {
 		transition: .5s ease;
 		opacity: 0;
 		position: absolute;
-		top: 55%;
-		left: 54%;
-		transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-    	text-align-last: center;
-		width: 80%;
+		top: 0;
+		height: 100%;
 		pointer-events: none;
-	  }
-
-	  /* .middle {
-		transition: .5s ease;
-		opacity: 0;
-		position: absolute;
-		top: 7%;
-    	text-align-last: center;
-		margin: 14% 10% 14% 10%;
-		pointer-events: none;
-	  } */
+		padding: calc(25px + 15%) 12% 0 12%;
+ 	  }
 	  
 	  .box.style2:hover .image {
 		opacity: 0.5;
@@ -2442,16 +2462,20 @@ input, select, textarea {
 		color: rgb(0, 0, 0);
 		font-size: 30px;
 		font-weight: 600;
-		padding: 8px 32px;
+		padding: 8px 0;
 		text-align: center;
 	  }
 
 	  .hero-text-body {
-		color: rgb(0, 0, 0);
+		/* color: rgb(0, 0, 0);
 		font-size: 20px;
 		padding: 8px 32px;
 		text-align: justify;
-		text-align-last: center;
+		text-align-last: center; */
+		color: rgb(0, 0, 0);
+		font-size: 20px;
+		padding: 8px 0;
+		text-align: center;
 	  }
 
 /* Copyright */
@@ -2551,10 +2575,23 @@ input, select, textarea {
 				/* padding: 5em 0; */
 			}
 
-				#top .image {
-					/* margin: 0 auto 2em auto; */
+			.hero-text-title {
+				font-size: 2.8vw !important;
+			}
+
+			.hero-text-body {
+				font-size: 2.1vw !important;
+				line-height: 3vw;
+			}
+
+			#intro-para {
+				font-size: 2.5vw !important;
+			}
+
+				/* #top .image {
+					margin: 0 auto 2em auto;
 					padding-top: 30%;
-				}
+				} */
 
 	}
 
