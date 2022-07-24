@@ -286,7 +286,7 @@ input, select, textarea {
 					background-image: none;
 					background-color: #fff;
 					color: rgb(3, 3, 3);
-					padding: 0em 5% 0 5% !important;
+					padding: 0em 5% 2em 5% !important;
 					/* width: 90%;
 					left: 5%; */
 					position: relative;
@@ -328,6 +328,7 @@ input, select, textarea {
 	
 				#project-title {
 					font-size: 8vw !important;
+					line-height: 8vw;
 				}
 	
 				#detail-title, #skills-title {
@@ -2179,6 +2180,7 @@ input, select, textarea {
 	#brief-sub-title-area {
 		width: 100%;
 		text-align: left;
+		margin-top: 1.5em;
 	}
 
 	#brief-para-area {
@@ -2187,7 +2189,7 @@ input, select, textarea {
 
 	#project-title {
 		margin: 0 auto;
-		margin-bottom: 1em;
+		/* margin-bottom: 1em; */
 		font-weight: 600;
 		text-align: center;
 		font-size: 80px;
@@ -2202,7 +2204,7 @@ input, select, textarea {
 
 	#brief-para {
 		margin: 0 auto;
-		margin-bottom: 1.5em;
+		/* margin-bottom: 1.5em; */
 		font-weight: 300;
 		text-align: left;
 		font-size: 19px;
@@ -2228,6 +2230,7 @@ input, select, textarea {
 		font-weight: 600;
 		text-align: center;
 		font-size: 50px;
+		margin-top: 3em;
 	}
 
 	#skills-title {
@@ -3026,7 +3029,7 @@ input, select, textarea {
 		/* position: relative; */
 		/* left: 15%; */
 		width: 100%;
-		margin-bottom: 3em;
+		/* margin-bottom: 3em; */
 	}
 
 	#video-info {
@@ -3037,6 +3040,8 @@ input, select, textarea {
 		font-size: 19px;
 		text-align: justify;
 		color: rgb(112, 112, 112);
+		margin-bottom: 0.5em;
+		line-height: 1.5em;
 	}
 
 
@@ -3194,8 +3199,8 @@ input, select, textarea {
   }
 
   #documentation-button-area {
-	  margin-bottom: 4em;
-	  margin-top: 2em;
+	  margin-bottom: 2em;
+	  /* margin-top: 2em; */
   }
 
   /* CSS for the page loader */
