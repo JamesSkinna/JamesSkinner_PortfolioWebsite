@@ -290,6 +290,7 @@ input, select, textarea {
 					/* width: 90%;
 					left: 5%; */
 					position: relative;
+					/* z-index: -1; */
 				}
 	
 				#brief-para {
@@ -2065,6 +2066,7 @@ input, select, textarea {
 			background-color: #fff;
 			color: rgb(3, 3, 3);
 			padding: 0em 0 0 0;
+			z-index: -1;
 		}
 		/* End of project page styles */
 
@@ -3011,16 +3013,22 @@ input, select, textarea {
 
 	/* For the scroll-animated videos */
 	#set-height {
-		height: 1600px;
-		margin-bottom: 3em;
+		/* height: 1600px; */
+		/* margin-bottom: 3em; */
+		position: sticky;
+		top: 0;
+		background-color: white;
+		padding-bottom: 2em;
+		padding-top: 4em;
+		margin-top: -4em;
 	}
 
 	canvas {
 		max-width: 100%;
 		max-height: 100vh;
-		left: 5%;
-		position: sticky;
-		top: 7%;
+		/* left: 5%; */
+		/* position: sticky; */
+		/* top: 7%; */
 	}
 
 
