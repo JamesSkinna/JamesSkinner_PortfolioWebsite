@@ -3217,10 +3217,10 @@ input, select, textarea {
   
   .loader-box .b {
 	border-radius: 50%;
-	border-left: 2px solid;
-	border-right: 2px solid;
-	border-top: 2px solid transparent !important;
-	border-bottom: 2px solid transparent !important;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-top: 1px solid transparent !important;
+	border-bottom: 1px solid transparent !important;
 	position: absolute;
 	top: 50%;
 	left: 50%;
