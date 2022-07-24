@@ -281,6 +281,77 @@ input, select, textarea {
 					width: 100%;
 				}
 
+
+				.wrapper.style8 {
+					background-image: none;
+					background-color: #fff;
+					color: rgb(3, 3, 3);
+					padding: 0em 5% 0 5% !important;
+					/* width: 90%;
+					left: 5%; */
+					position: relative;
+				}
+	
+				#brief-para {
+					font-size: 3.5vw !important;
+					line-height: 5vw !important;
+					text-align: left !important;
+				}
+
+				#skill-para {
+					font-size: 3.5vw !important;
+					line-height: 5vw !important;
+					text-align: justify !important;
+				}
+	
+				#detail-para-left, #detail-para-right {
+					font-size: 3.5vw !important;
+					line-height: 5vw !important;
+				}
+	
+				#brief-sub-title, #detail-sub-title {
+					font-size: 4vw !important;
+					/* line-height: 2.vw; */
+				}
+
+				#video-info {
+					font-size: 3.2vw !important;
+				}
+
+				#brief-para-area {
+					padding-top: 1vw !important;
+				}
+
+				#brief-sub-title-area {
+					padding-top: 10px !important;
+				}
+	
+				#project-title {
+					font-size: 8vw !important;
+				}
+	
+				#detail-title, #skills-title {
+					font-size: 4.5vw !important;
+				}
+	
+				.next, .prev {
+					top: 42% !important;
+					padding: 3% !important;
+				}
+	
+				#detail-images-area-right, #detail-images-area-left {
+					width: 100% !important;
+					max-width: 100% !important;
+				}
+	
+				.text {
+					font-size: 3vw !important;
+					line-height: 4vw !important;
+				}
+
+				.slideshow-container {
+					padding-bottom: 0.5em;
+				}
 		}
 
 /* Row */
@@ -1992,7 +2063,7 @@ input, select, textarea {
 			background-image: none;
 			background-color: #fff;
 			color: rgb(3, 3, 3);
-			padding: 0em 0 3em 0;
+			padding: 0em 0 0 0;
 		}
 		/* End of project page styles */
 
@@ -2106,12 +2177,12 @@ input, select, textarea {
 
 	/* Below styling is for project pages (standard for all...) */
 	#brief-sub-title-area {
-		width: 20%;
+		width: 100%;
 		text-align: left;
 	}
 
 	#brief-para-area {
-		width: 80%;
+		width: 100%;
 	}
 
 	#project-title {
@@ -2131,7 +2202,7 @@ input, select, textarea {
 
 	#brief-para {
 		margin: 0 auto;
-		margin-bottom: 1em;
+		margin-bottom: 1.5em;
 		font-weight: 300;
 		text-align: left;
 		font-size: 19px;
@@ -2139,16 +2210,16 @@ input, select, textarea {
 	}
 
 	#detail-text-area-left {
-		width: 45%;
+		width: 100%;
 		text-align: justify;
-		/* padding-right: 2em; */
+		padding-top: 0 !important;
 	}
 
 	#detail-text-area-right {
-		width: 45%;
-		text-align: justify;
-		text-align-last: right;
-		/* padding-left: 2em; */
+		width: 100%;
+		text-align: left;
+		/* text-align-last: right; */
+		padding-top: 0 !important;
 	}
 
 	#detail-title {
@@ -2161,7 +2232,7 @@ input, select, textarea {
 
 	#skills-title {
 		margin: 0 auto;
-		margin-bottom: 2em;
+		margin-bottom: 1em;
 		margin-top: 1em;
 		font-weight: 600;
 		text-align: center;
@@ -2182,8 +2253,8 @@ input, select, textarea {
 		font-weight: 300;
 		text-align: left;
 		font-size: 19px;
-		text-align: justify;
-		padding-right: 1em;
+		text-align: left;
+		/* padding-right: 1em; */
 	}
 
 	#detail-para-left a {
@@ -2196,8 +2267,8 @@ input, select, textarea {
 		font-weight: 300;
 		text-align: left;
 		font-size: 19px;
-		text-align: justify;
-		padding-left: 1em;
+		text-align: left;
+		/* padding-left: 1em; */
 	}
 
 	#detail-para-right a {
@@ -2207,6 +2278,7 @@ input, select, textarea {
 	#detail-images-area-left {
 		position: relative;
 		width: 55%;
+		order: 2;
 	}
 
 	#detail-images-area-right {
@@ -2220,7 +2292,7 @@ input, select, textarea {
 		font-weight: 300;
 		text-align: left;
 		font-size: 19px;
-		text-align: right;
+		/* text-align: center; */
 	}
 
 	#coming-soon {
@@ -2652,7 +2724,7 @@ input, select, textarea {
 				text-align: center;
 				font-size: 1.2em;
 				width: 100%;
-				padding: 1em 0 1em 0;
+				/* padding: 1em 0 1em 0; */
 			}
 
 				input[type="button"].large,
@@ -2954,7 +3026,7 @@ input, select, textarea {
 		/* position: relative; */
 		/* left: 15%; */
 		width: 100%;
-		margin-bottom: 5em;
+		margin-bottom: 3em;
 	}
 
 	#video-info {
@@ -3005,7 +3077,7 @@ input, select, textarea {
   }
 
   .prev {
-	right: 90%;
+	left: 16px;
 	border-radius: 0 3px 3px 0;;
   }
   
@@ -3075,20 +3147,21 @@ input, select, textarea {
 /* For documentation button */
   
 .center {
-	width: 480px;
+	/* width: 480px; */
 	height: 60px;
 	position: relative;
-	left: 30%;
+	/* left: 30%; */
   }
   
   .btn {
-	width: 480px;
+	width: 200px;
 	height: 60px;
 	cursor: pointer;
 	background: transparent;
 	border: 1px solid #000000;
 	outline: none;
 	transition: 1s ease-in-out;
+	line-height: 1.3em;
   }
   
   svg {
@@ -3101,6 +3174,7 @@ input, select, textarea {
 	/* Note - 1080 (above) corresponds to 2*480px (2*width) + 2*60px (2*height)*/
 	stroke-dashoffset: 150;
 	transition: 1s ease-in-out;
+	width: 0px !important;
   }
   
   .btn:hover {
@@ -3114,13 +3188,14 @@ input, select, textarea {
   
   .btn span {
 	color: rgb(0, 0, 0);
-	font-size: 18px;
+	font-size: 14px;
+	/* line-height: 0em; */
 	font-weight: 600;
   }
 
   #documentation-button-area {
-	  margin-bottom: 6em;
-	  margin-top: 5em;
+	  margin-bottom: 4em;
+	  margin-top: 2em;
   }
 
   /* CSS for the page loader */
