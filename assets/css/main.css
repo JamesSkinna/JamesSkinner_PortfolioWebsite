@@ -3206,8 +3206,8 @@ input, select, textarea {
   }
 
   .loader-box {
-	width: 30%;
-	padding-top: 30%;
+	width: 600px;
+	padding-top: 600px;
 	position: absolute;
 	top: 45%;
 	left: 50%;
