@@ -8,6 +8,10 @@ swup.on('contentReplaced', function () {
 
 var swupRemoveEventListenerActive = false;
 
+var gifsloaded = false;
+// List to track which image sequences have been preloaded (so don't need to re-load)
+var imgSequencesLoaded = [];
+
 // Code used for slideshows...
 var slideIndex = [1,1,1];
 var slideId = ["mySlides1", "mySlides2", "mySlides3"]
@@ -152,16 +156,39 @@ function init() {
     } else if (document.querySelector('.spacehack-scrolling')) {
         animateOnScroll('.spacehack-scrolling', 'ImgSequence_SpaceHack/SpaceHackTest', '.jpg', 0, 180);
     } else if (document.querySelector('#portfolio')) {
-        preloadGifs();
+        // Only preload & do loading animation on first navigation to site
+        if (gifsloaded == false) {
+            preloadGifs();
+        } else {
+            $(".loader-wrapper").hide();
+        }
     }
+
 
     function preloadGifs() {
         var gifs = new Array();
+        // var gifsloaded = false;
+        var loadedgifcount = 0;
+        $(".loader-wrapper").show();
         function preload() {
+            totalgifs = preload.arguments.length;
+            console.log(totalgifs);
+            // console.log(totalgifs);
             for (i = 0; i < preload.arguments.length; i++) {
                 gifs[i] = new Image();
                 gifs[i].src = preload.arguments[i];
-                // console.log("Gif Loaded");
+                gifs[i].onload = function () {
+                    loadedgifcount += 1;
+                    // console.log(loadedgifcount);
+                    if (loadedgifcount >= totalgifs) {  //When all gifs loaded
+                        if (gifsloaded == false) {  //load the page...
+                            gifsloaded = true;
+                            $(".loader-wrapper").fadeOut(500);
+                            $("#swup").fadeOut("fast");
+                            $("#swup").fadeIn(500);
+                        }
+                    }
+                }
             }
         }
         preload(
@@ -181,6 +208,8 @@ function init() {
         const html = document.documentElement;
         const canvas = document.querySelector(animationClassName);
         const context = canvas.getContext('2d');
+        var animationHasFinished = false;
+        $("#set-height").animate({opacity: 1}, 0);      //Make sure animation never faded out on load
 
         const currentFrame = index => (
             `/animations/${filePathName}${index.toString().padStart(4, '0')}${fileExtension}`
@@ -228,13 +257,20 @@ function init() {
                             $("#set-height").fadeOut("fast");
                             $(".loader-wrapper").fadeOut(500);
                             $("#set-height").fadeIn(1000);
+                            imgSequencesLoaded.push(animationClassName);    //Remember, so don't need to preload next time
                         }
                     }
                 }
             }
         };
 
-        preloadImages();
+        if (imgSequencesLoaded.includes(animationClassName)) {
+            // If already navigated to this page (and loaded previously), no need to reload
+            $(".loader-wrapper").hide();
+        } else {
+            $(".loader-wrapper").show();
+            preloadImages();
+        }
 
         canvas.height = 1080;               //Height and width of still images, in pixels - get this from photoshop
         canvas.width = 1920;
@@ -261,7 +297,16 @@ function init() {
             const frameIndex = Math.min(frameLast - 1, Math.floor(frameFirst + (scrollFraction * frameCount)))
             // console.log(frameIndex)
             requestAnimationFrame(() => updateImage(frameIndex + 1))           //Update the frame shown in the canvas
-            // console.log('scroll active');
+            // For mobile specifically (width <= 736px), we want to hide the animation after it finishes...
+            if ($(window).width() <= 736) {
+                if ((frameIndex == frameLast - 1) && (animationHasFinished == false))  {
+                    $("#set-height").animate({opacity: 0}, 500);
+                    animationHasFinished = true;
+                } else if ((frameIndex < frameLast - 1) && (animationHasFinished == true)) {
+                    $("#set-height").animate({opacity: 1}, 500);    //If scrolling back to the top, fade back in
+                    animationHasFinished = false;
+                }
+            }
         }
 
         // Add the event listener to animate as the page is scrolled

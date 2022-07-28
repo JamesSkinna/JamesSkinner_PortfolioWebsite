@@ -71,6 +71,10 @@ input, select, textarea {
 
 /* Basic */
 
+	#swup {
+		position: relative;
+	}
+
 	html {
 		box-sizing: border-box;
 	}
@@ -83,7 +87,7 @@ input, select, textarea {
 		padding-top: 3.5em;
 	}
 
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+		/* body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
 			-ms-animation: none !important;
@@ -92,7 +96,7 @@ input, select, textarea {
 			-webkit-transition: none !important;
 			-ms-transition: none !important;
 			transition: none !important;
-		}
+		} */
 
 	body, input, textarea, select, button {
 		font-family: 'Open Sans', sans-serif;
@@ -2906,7 +2910,7 @@ input, select, textarea {
 
 	html.is-leaving .transition-fade-portfolio {
 		transform: translateX(-30%);
-		opacity: 0;
+		opacity: 0 !important;
 	}
 
 	.transition-fade-about {
