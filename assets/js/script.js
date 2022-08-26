@@ -176,7 +176,6 @@ function init() {
         $(".loader-wrapper").show();
         function preload() {
             totalgifs = preload.arguments.length;
-            console.log(totalgifs);
             // console.log(totalgifs);
             for (i = 0; i < preload.arguments.length; i++) {
                 gifs[i] = new Image();
