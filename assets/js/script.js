@@ -155,6 +155,10 @@ function init() {
         animateOnScroll('.segway-scrolling', 'ImgSequence_Segway/', '.jpg', 0, 119);
     } else if (document.querySelector('.spacehack-scrolling')) {
         animateOnScroll('.spacehack-scrolling', 'ImgSequence_SpaceHack/SpaceHackTest', '.jpg', 0, 180);
+    } else if (document.querySelector('.commend-scrolling')) {
+        animateOnScroll('.commend-scrolling', 'ImgSequence_Commend/Commend', '.jpg', 0, 94);
+    } else if (document.querySelector('.legobites-scrolling')) {
+        animateOnScroll('.legobites-scrolling', 'ImgSequence_LegoBites/LegoBites', '.jpg', 0, 132);
     } else if (document.querySelector('#portfolio')) {
         // Only preload & do loading animation on first navigation to site
         if (gifsloaded == false) {
@@ -172,7 +176,6 @@ function init() {
         $(".loader-wrapper").show();
         function preload() {
             totalgifs = preload.arguments.length;
-            console.log(totalgifs);
             // console.log(totalgifs);
             for (i = 0; i < preload.arguments.length; i++) {
                 gifs[i] = new Image();
@@ -200,7 +203,9 @@ function init() {
             "/Gifs/GIF_BikeFrame.gif",
             "/Gifs/GIF_LeonHackathon.gif",
             "/Gifs/GIF_Segway.gif",
-            "/Gifs/GIF_SpaceHack.gif"
+            "/Gifs/GIF_SpaceHack.gif",
+            "/Gifs/GIF_Commend.gif",
+            "/Gifs/GIF_LegoBites.gif"
         );
     }
 
