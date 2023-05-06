@@ -183,7 +183,7 @@ function init() {
                 gifs[i].onload = function () {
                     loadedgifcount += 1;
                     // console.log(loadedgifcount);
-                    if (loadedgifcount >= totalgifs) {  //When all gifs loaded
+                    if (loadedgifcount >= totalgifs/2) {  //When half the gifs have loaded
                         if (gifsloaded == false) {  //load the page...
                             gifsloaded = true;
                             $(".loader-wrapper").fadeOut(500);
